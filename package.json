@@ -1,0 +1,22 @@
+{
+  "name": "Vapor",
+  "version": "1.0.0",
+  "description": "Automated Steam trading bot.",
+  "main": "index.js",
+  "author": {
+    "name": "Michael Scholtz",
+    "email": "michael.scholtz@outlook.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.8.3",
+    "prompt": "^0.2.14",
+    "steam": "^0.6.6",
+    "steam-tradeoffers": "^0.2.4",
+    "winston": "^0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://something.com/p.git"
+  }
+}

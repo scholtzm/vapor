@@ -1,0 +1,7 @@
+.idea
+.projectFilesBackup
+node_modules
+sentry
+servers
+logs
+config.json
