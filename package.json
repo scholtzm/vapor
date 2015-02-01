@@ -13,6 +13,7 @@
     "prompt": "^0.2.14",
     "steam": "^0.6.7",
     "steam-tradeoffers": "^1.0.2",
+    "steam-groups": "^1.0.0",
     "winston": "^0.8.0"
   },
   "repository": {
