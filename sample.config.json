@@ -3,5 +3,6 @@
     "password":"",
     "displayName":"",
     "tradeOfferURL":"",
-    "admins":[ "" ]
+    "admins":[ "" ],
+    "plugins": [ "" ]
 }
