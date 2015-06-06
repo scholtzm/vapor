@@ -1,7 +1,7 @@
 {
   "name": "Vapor",
   "version": "1.0.0",
-  "description": "Automated Steam trading bot.",
+  "description": "Automated Steam client.",
   "main": "index.js",
   "author": {
     "name": "Michael Scholtz",
@@ -9,15 +9,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.8.3",
+    "moment": "^2.10.3",
     "prompt": "^0.2.14",
-    "steam": "^0.6.7",
-    "steam-tradeoffers": "^1.0.2",
-    "steam-groups": "^1.0.0",
-    "winston": "^0.8.0"
+    "steam": "^0.6.8",
+    "steam-tradeoffers": "^1.2.3",
+    "steam-groups": "^1.0.1",
+    "winston": "^1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "http://something.com/p.git"
+    "url": "https://github.com/scholtzm/vapor.git"
   }
 }
