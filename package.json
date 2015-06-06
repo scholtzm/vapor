@@ -1,7 +1,7 @@
 {
   "name": "Vapor",
   "version": "1.0.0",
-  "description": "Automated Steam client.",
+  "description": "Automated extensible Steam client.",
   "main": "index.js",
   "author": {
     "name": "Michael Scholtz",
