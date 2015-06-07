@@ -11,5 +11,5 @@ There's a helper method available in `Vapor.extension`.
 
 #### `Vapor.extension.getPluginFolderPath(pluginName)` -> string
 
-This function will create subfolder (if it doesn't exist) for the give `pluginName`
-and then return the full path to specific plugin folder.
+This function creates subfolder (if it doesn't exist) for the given `pluginName`
+and then returns the full path to specific plugin folder.
