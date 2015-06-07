@@ -1,24 +1,15 @@
 # Vapor Plugins Folder
 
-All Vapor plugins are loaded from this folder.
+All Vapor plugins should keep their extra files in this folder.
 
-### Installing plugins
+### Usage
 
-All plugins can be easily installed using git.
+If a plugin needs to store any extra files, it should use this folder
+and create another subfolder specifically for its use.
 
-In this example, we will install simple plugin to handle our friends list.
+There's a helper method available in `Vapor.extension`.
 
-```sh
-$ git clone https://github.com/scholtzm/vapor-friendslist.git
-```
+#### `Vapor.extension.getPluginFolderPath(pluginName)` -> string
 
-Next, go to your Vapor config file and update `plugins` array:
-
-`"plugins": [ "vapor-friendslist" ]`
-
-Your plugin is ready to be used.
-
-### Individual settings
-
-Some plugins use individual config files.
-Read their READMEs to find out how you can change the config file.
+This function will create subfolder (if it doesn't exist) for the give `pluginName`
+and then return the full path to specific plugin folder.

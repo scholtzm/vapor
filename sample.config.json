@@ -1,8 +1,9 @@
 {
-    "username":"",
-    "password":"",
-    "displayName":"",
-    "tradeOfferURL":"",
-    "admins":[ "" ],
-    "plugins": [ "" ]
+    "username": "",
+    "password": "",
+    "displayName": "",
+    "tradeOfferURL": "",
+    "admins": [ "" ],
+    "plugins": [ "" ],
+    "pluginOptions": {}
 }
