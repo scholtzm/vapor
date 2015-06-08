@@ -12,7 +12,6 @@
     "moment": "^2.10.3",
     "prompt": "^0.2.14",
     "steam": "^0.6.8",
-    "steam-tradeoffers": "^1.2.3",
     "steam-groups": "^1.0.1",
     "winston": "^1.0.0"
   },
