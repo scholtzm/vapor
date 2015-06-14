@@ -8,7 +8,7 @@ If a plugin needs to store any extra files, it's recommended to use this particu
 There's a helper method available in `Vapor.extension` which will return correct plugin path for specific plugin
 as well as specific user.
 
-**This is important** because extra files should be stored per user, not per plugin.
+**This is important** because extra files should be stored per user as well as per plugin.
 
 #### `Vapor.extension.getPluginFolderPath(pluginName)` -> string
 
