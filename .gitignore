@@ -6,5 +6,5 @@ servers
 logs
 config.json
 
-plugins/*
-!plugins/README.md
+data/*
+!data/README.md
