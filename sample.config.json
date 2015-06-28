@@ -1,14 +1,13 @@
 {
-    "username": "",
-    "password": "",
-    "displayName": "",
-    "tradeOfferURL": "",
-    "admins": [ "" ],
-    "logs": {
-      "dateFormat": "YYYY-MM-DD HH:mm:ss",
-      "consoleLevel": "error",
-      "fileLevel": "debug"
-    },
-    "plugins": [ "" ],
-    "pluginOptions": {}
+  "username": "",
+  "password": "",
+  "displayName": "",
+  "admins": [ "" ],
+  "logs": {
+    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+    "consoleLevel": "error",
+    "fileLevel": "debug"
+  },
+  "plugins": [ "" ],
+  "pluginOptions": {}
 }
