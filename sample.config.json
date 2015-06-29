@@ -8,6 +8,5 @@
     "consoleLevel": "error",
     "fileLevel": "debug"
   },
-  "plugins": [ "" ],
-  "pluginOptions": {}
+  "plugins": {}
 }
