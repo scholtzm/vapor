@@ -1,6 +1,7 @@
 .idea
 .projectFilesBackup
 node_modules
+npm-debug.log
 sentry
 servers
 logs

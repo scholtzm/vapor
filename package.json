@@ -24,6 +24,8 @@
     "jsdoc-to-markdown": "^1.1.1"
   },
   "scripts": {
-    "docs": "jsdoc2md lib/api.js > docs/api.md && jsdoc2md lib/utils.js > docs/utils.md"
+    "docs": "npm run api-docs && npm run plugin-docs",
+    "api-docs": "jsdoc2md lib/api.js lib/utils.js > docs/api.md",
+    "plugin-docs": "jsdoc2md lib/plugins/*.js > docs/built-in-plugins.md"
   }
 }
