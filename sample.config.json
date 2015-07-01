@@ -5,7 +5,7 @@
   "admins": [ "" ],
   "logs": {
     "dateFormat": "YYYY-MM-DD HH:mm:ss",
-    "consoleLevel": "debug",
+    "consoleLevel": "info",
     "fileLevel": "debug"
   },
   "plugins": {}
