@@ -1,4 +1,4 @@
-# Vapor
+# Vapor (BETA)
 
 Vapor is automated extensible [Steam](http://store.steampowered.com/about/) client for node.js.
 
@@ -8,7 +8,7 @@ Vapor is automated extensible [Steam](http://store.steampowered.com/about/) clie
 
 The idea behind Vapor is simple - provide lightweight client which will contain only the most necessary functionality, such as being able to log in, and make this client's behaviour extensible by using plugins.
 
-This concept is very similar to Steam, however the plugin system is slightly different.
+This concept is very similar to [Stem](https://github.com/alvinl/stem), however the plugin system is slightly different.
 
 ## Core
 
@@ -40,7 +40,7 @@ Using this pattern, there are no hard dependencies between two plugins. If a plu
 
 ## More information
 
-For more information, visit this repo's Wiki.
+Visit this repo's Wiki for more information regarding installation, configuration, API, plugins, etc.
 
 You can also find auto-generated API docs in the [docs](docs) folder.
 
