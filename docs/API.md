@@ -16,7 +16,7 @@
   * [.getSteam()](#API+getSteam) ⇒ <code>Object</code>
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
   * [.emitEvent(event, data)](#API+emitEvent)
-  * [.registerHandler(options)](#API+registerHandler)
+  * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
   * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
@@ -70,7 +70,7 @@ Allows plugin to emit custom events via Vapors event emitter.
 | data | <code>\*</code> | Data. |
 
 <a name="API+registerHandler"></a>
-### apI.registerHandler(options)
+### apI.registerHandler(options, callback)
 Allows plugin to register custom handler for any event.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -81,19 +81,20 @@ Allows plugin to register custom handler for any event.
 | options.emitter | <code>string</code> | Can be either 'vapor', 'steam' or 'plugin'. |
 | options.plugin | <code>string</code> | If emitter is plugin, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
-| options.callback | <code>function</code> | Callback function. |
+| callback | <code>function</code> | Callback function. |
 
 **Example**  
 ```js
 API.registerHandler({
-    emitter: 'steam',
-    event: 'friendMsg',
-    callback: function(user, message, type) {
+        emitter: 'steam',
+        event: 'friendMsg'
+    },
+    function(user, message, type) {
         if(type === Steam.EChatEntryType.ChatMsg) {
             log.info(user + " says: " + message);
         }
     }
-});
+);
 ```
 <a name="API+removeAllHandlers"></a>
 ### apI.removeAllHandlers(options)
