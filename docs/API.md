@@ -24,6 +24,7 @@
 <a name="new_API_new"></a>
 ### new API(Vapor, pluginName)
 API class constructor.
+Instance of this class is passed to plugins exported function.
 
 
 | Param | Type | Description |
@@ -82,6 +83,18 @@ Allows plugin to register custom handler for any event.
 | options.event | <code>string</code> | Event name. |
 | options.callback | <code>function</code> | Callback function. |
 
+**Example**  
+```js
+API.registerHandler({
+    emitter: 'steam',
+    event: 'friendMsg',
+    callback: function(user, message, type) {
+        if(type === Steam.EChatEntryType.ChatMsg) {
+            log.info(user + " says: " + message);
+        }
+    }
+});
+```
 <a name="API+removeAllHandlers"></a>
 ### apI.removeAllHandlers(options)
 Allows plugin to remove all handlers for a specific event.
@@ -119,6 +132,7 @@ Returns logger prefixed with plugin's name.
 <a name="new_Utils_new"></a>
 ### new Utils(Vapor)
 Utils class constructor.
+Instance of this class is available via [getUtils](#API+getUtils).
 
 
 | Param | Type | Description |

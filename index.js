@@ -1,8 +1,6 @@
 /**
- * Vapor
- * @type {Vapor|exports}
+ * Main entry point
  */
-
 var Vapor  = require('./lib/');
 
 var configPath = "./config";
