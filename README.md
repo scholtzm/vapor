@@ -19,6 +19,7 @@ Core represents several key features:
 - handles log in process, including auth codes and sentry files
 - logs all Steam events to console and file
 - provides API for plugins
+- makes it possible to run multiple bots using a single installation
 
 Everything else needs to be programmed separately using plugin system.
 
