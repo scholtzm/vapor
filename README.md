@@ -12,7 +12,7 @@ This concept is very similar to [Stem](https://github.com/alvinl/stem), however 
 
 ## Core
 
-Vapor's core (represented by this repo) provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) (extended by [node-steam-groups](https://github.com/scholtzm/node-steam-groups)) to connect to Steam servers.
+Vapor's core (represented by this repo) provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) (extended with [node-steam-groups](https://github.com/scholtzm/node-steam-groups)) to connect to Steam servers.
 
 Core represents several key features:
 - easy to update and does not have to be modified by the user
