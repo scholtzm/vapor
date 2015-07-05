@@ -2,6 +2,7 @@
   "username": "",
   "password": "",
   "displayName": "",
+  "onlineState": 1,
   "admins": [ "" ],
   "logs": {
     "dateFormat": "YYYY-MM-DD HH:mm:ss",
