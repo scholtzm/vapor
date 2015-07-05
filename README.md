@@ -46,6 +46,6 @@ Visit this repo's Wiki for more information regarding installation, configuratio
 
 You can also find auto-generated API docs in the [docs](docs) folder.
 
-# LICENSE
+## LICENSE
 
 MIT. See `LICENSE`.
