@@ -129,6 +129,7 @@ Returns logger prefixed with plugin's name.
   * [new Utils(Vapor)](#new_Utils_new)
   * [.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>
   * [.getShortPluginName(pluginName)](#Utils+getShortPluginName) ⇒ <code>string</code>
+  * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
 
 <a name="new_Utils_new"></a>
 ### new Utils(Vapor)
@@ -162,3 +163,21 @@ Removes 'vapor-' prefix from plugin name.
 | --- | --- | --- |
 | pluginName | <code>string</code> | Plugin name. |
 
+<a name="Utils+stringToEnum"></a>
+### utils.stringToEnum(string, enumList) ⇒ <code>number</code>
+Returns first enum value that matches the given string.
+
+**Kind**: instance method of <code>[Utils](#Utils)</code>  
+**Returns**: <code>number</code> - Enum value or null if not found.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | Enum name. |
+| enumList | <code>Object</code> | List of enums from the Steam object. |
+
+**Example**  
+```js
+// returns 5, which is equal to Steam.EPersonaState.LookingToTrade
+var tradeState = utils.stringToEnum("trade", Steam.EPersonaState);
+client.setPersonaState(tradeState);
+```
