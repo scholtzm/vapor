@@ -9,3 +9,5 @@ There are 2 main branches
 Feature branches should be created from the `develop` branch.
 
 Hotfix branches should be created from the `master` branch.
+
+I reserve the right to either decline or rewrite your pull request.
