@@ -14,3 +14,8 @@ var vapor  = new Vapor();
 
 // Let's go!
 vapor.init(config);
+
+// Handle SIGINT
+process.on('SIGINT', function() {
+    vapor.shutdown();
+});
