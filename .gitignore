@@ -9,3 +9,6 @@ config.json
 
 data/*
 !data/README.md
+
+# Ignore plugin for testing purposes
+lib/plugins/dummy.js
