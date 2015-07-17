@@ -2,13 +2,19 @@
 .projectFilesBackup
 node_modules
 npm-debug.log
+
+#Vapor folder
 sentry
 servers
 logs
-config.json
 
+# Ignore all *config.json files except for the sample config.
+*config.json
+!sample.config.json
+
+# Ignore everything in the data folder except for the README file.
 data/*
 !data/README.md
 
-# Ignore plugin for testing purposes
+# Ignore plugin for testing purposes.
 lib/plugins/dummy.js
