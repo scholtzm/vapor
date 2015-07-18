@@ -1,5 +1,8 @@
 # Vapor (BETA)
 
+[![Dependency Status](https://david-dm.org/scholtzm/vapor.svg)](https://david-dm.org/scholtzm/vapor)
+[![devDependency Status](https://david-dm.org/scholtzm/vapor/dev-status.svg)](https://david-dm.org/scholtzm/vapor#info=devDependencies)
+
 Vapor is automated extensible [Steam](http://store.steampowered.com/about/) client for node.js.
 
 ![vapor](https://cloud.githubusercontent.com/assets/2640934/8464564/6946c9be-2043-11e5-9189-d5fe5e334c88.png)
