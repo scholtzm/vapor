@@ -15,12 +15,12 @@ This concept is very similar to [Stem](https://github.com/alvinl/stem), however 
 
 ## Core
 
-Vapor's core (represented by this repo) provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) (extended with [node-steam-groups](https://github.com/scholtzm/node-steam-groups)) to connect to Steam servers.
+Vapor's core (represented by this repo) provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) to connect to Steam servers.
 
 Core represents several key features:
 - easy to update and does not have to be modified by the user
 - handles log in process, including auth codes and sentry files
-- logs all Steam events to console and file
+- logs major Steam events to console and file
 - provides API for plugins
 - makes it possible to run multiple bots using a single installation
 
@@ -31,7 +31,7 @@ Everything else needs to be programmed separately using plugin system.
 Plugins are self-contained code snippets which extend Vapor's behaviour.
 
 Plugins have:
-- access to active Steam client instance
+- access to active Steam client instance and handlers
 - access to Steam's enums
 - access to logger
 
