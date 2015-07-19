@@ -38,7 +38,7 @@ Plugins have:
 They can:
 - emit custom events
 - listen to events
-- have their own config file
+- have their own configuration
 - store data
 
 Using this pattern, there are no hard dependencies between two plugins. If a plugin listens to another plugins event, the plugin won't break even if the other plugin isn't available.

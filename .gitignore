@@ -1,12 +1,8 @@
 .idea
 .projectFilesBackup
+.DS_Store
 node_modules
 npm-debug.log
-
-#Vapor folder
-sentry
-servers
-logs
 
 # Ignore all *config.json files except for the sample config.
 *config.json
