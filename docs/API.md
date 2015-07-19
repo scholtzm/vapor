@@ -12,6 +12,7 @@
 * [API](#API)
   * [new API(Vapor, pluginName)](#new_API_new)
   * [.getClient()](#API+getClient) ⇒ <code>Object</code>
+  * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
   * [.getUtils()](#API+getUtils) ⇒ <code>Object</code>
   * [.getSteam()](#API+getSteam) ⇒ <code>Object</code>
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
@@ -35,10 +36,20 @@ Instance of this class is passed to plugins exported function.
 <a name="API+getClient"></a>
 ### apI.getClient() ⇒ <code>Object</code>
 Returns active Steam client used by Vapor.
-This client is also extended by steam-groups module.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Active Steam client.  
+<a name="API+getHandler"></a>
+### apI.getHandler(handler) ⇒ <code>Object</code>
+Returns active Steam handler used by Vapor.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+**Returns**: <code>Object</code> - Active Steam handler.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handler | <code>string</code> | Can be either 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'steamgroups'. |
+
 <a name="API+getUtils"></a>
 ### apI.getUtils() ⇒ <code>Object</code>
 Returns Utils class.
@@ -78,7 +89,7 @@ Allows plugin to register custom handler for any event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'steam' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'plugin'. |
 | options.plugin | <code>string</code> | If emitter is plugin, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
@@ -105,7 +116,7 @@ Allows plugin to remove all handlers for a specific event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'steam' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'plugin'. |
 | options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
