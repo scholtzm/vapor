@@ -48,7 +48,7 @@ Returns active Steam handler used by Vapor.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| handler | <code>string</code> | Can be either 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'steamgroups'. |
+| handler | <code>string</code> | Can be either 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'steamGroups'. |
 
 <a name="API+getUtils"></a>
 ### apI.getUtils() ⇒ <code>Object</code>
@@ -89,7 +89,7 @@ Allows plugin to register custom handler for any event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'plugin'. |
 | options.plugin | <code>string</code> | If emitter is plugin, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
@@ -116,7 +116,7 @@ Allows plugin to remove all handlers for a specific event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamuser', 'steamfriends', 'steamtrading', 'steamgamecoordinator' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'plugin'. |
 | options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
