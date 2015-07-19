@@ -2,7 +2,7 @@
 
 All Vapor data is stored in this particular folder - logs, sentry files (SteamGuard) and server lists.
 
-Vapor plugins *must* also keep their extra files in this folder.
+Vapor plugins *should* also keep their extra files in this folder.
 
 ### Usage
 
