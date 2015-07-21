@@ -142,6 +142,9 @@ Returns logger prefixed with plugin's name.
   * [.getShortPluginName(pluginName)](#Utils+getShortPluginName) ⇒ <code>string</code>
   * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
   * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
+  * [.accountIDToSteamID(accountID)](#Utils+accountIDToSteamID) ⇒ <code>string</code>
+  * [.steamIDToAccountID(steamID)](#Utils+steamIDToAccountID) ⇒ <code>number</code>
+  * [.getTimestamp(unixTimestamp)](#Utils+getTimestamp) ⇒ <code>string</code>
 
 <a name="new_Utils_new"></a>
 ### new Utils(Vapor)
@@ -210,3 +213,38 @@ Returns string description for the given enum value.
 // returns "LookingToTrade"
 var stateDescription = utils.stringToEnum(5, Steam.EPersonaState);
 ```
+<a name="Utils+accountIDToSteamID"></a>
+### utils.accountIDToSteamID(accountID) ⇒ <code>string</code>
+Converts account ID to 64 bit SteamID string.
+
+**Kind**: instance method of <code>[Utils](#Utils)</code>  
+**Returns**: <code>string</code> - Converted 64 bit SteamID.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| accountID | <code>number</code> | User's account ID. |
+
+<a name="Utils+steamIDToAccountID"></a>
+### utils.steamIDToAccountID(steamID) ⇒ <code>number</code>
+Converts 64 bit SteamID string to account ID.
+
+**Kind**: instance method of <code>[Utils](#Utils)</code>  
+**Returns**: <code>number</code> - Account ID.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| steamID | <code>string</code> | 64 bit SteamID. |
+
+<a name="Utils+getTimestamp"></a>
+### utils.getTimestamp(unixTimestamp) ⇒ <code>string</code>
+Converts unix timestamp into formatted timestamp.
+
+The timestamp format is taken from Vapor's logs configuration.
+
+**Kind**: instance method of <code>[Utils](#Utils)</code>  
+**Returns**: <code>string</code> - Formatted timestamp.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| unixTimestamp | <code>number</code> | Unix timestamp. |
+

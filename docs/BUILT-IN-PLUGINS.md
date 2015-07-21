@@ -13,6 +13,11 @@
 <p>Use this plugin if you don&#39;t want to deal with regular trading system.</p>
 <p><strong>Remark:</strong> This plugin does not decline trade offers.</p>
 </dd>
+<dt><a href="#module_offline-messages">offline-messages</a></dt>
+<dd><p>Automatically removes and logs all pending chat messages.</p>
+<p>Use this plugin if you want to get rid of pending notifications
+related to offline messages.</p>
+</dd>
 </dl>
 <a name="module_decline-friend-requests"></a>
 ## decline-friend-requests
@@ -43,6 +48,18 @@ Automatically declines all trade requests.
 Use this plugin if you don't want to deal with regular trading system.
 
 **Remark:** This plugin does not decline trade offers.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+<a name="module_offline-messages"></a>
+## offline-messages
+Automatically removes and logs all pending chat messages.
+
+Use this plugin if you want to get rid of pending notifications
+related to offline messages.
 
 
 | Param | Type | Description |

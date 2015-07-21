@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bytebuffer": "^4.0.0",
     "moment": "^2.10.3",
     "prompt": "^0.2.14",
     "steam": "^1.0.0",
