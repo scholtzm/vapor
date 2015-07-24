@@ -144,7 +144,7 @@ Returns logger prefixed with plugin's name.
   * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
   * [.accountIDToSteamID(accountID)](#Utils+accountIDToSteamID) ⇒ <code>string</code>
   * [.steamIDToAccountID(steamID)](#Utils+steamIDToAccountID) ⇒ <code>number</code>
-  * [.getTimestamp(unixTimestamp)](#Utils+getTimestamp) ⇒ <code>string</code>
+  * [.getTimestamp(unixTimestamp, format)](#Utils+getTimestamp) ⇒ <code>string</code>
 
 <a name="new_Utils_new"></a>
 ### new Utils(Vapor)
@@ -236,7 +236,7 @@ Converts 64 bit SteamID string to account ID.
 | steamID | <code>string</code> | 64 bit SteamID. |
 
 <a name="Utils+getTimestamp"></a>
-### utils.getTimestamp(unixTimestamp) ⇒ <code>string</code>
+### utils.getTimestamp(unixTimestamp, format) ⇒ <code>string</code>
 Converts unix timestamp into formatted timestamp.
 
 The timestamp format is taken from Vapor's logs configuration.
@@ -247,4 +247,5 @@ The timestamp format is taken from Vapor's logs configuration.
 | Param | Type | Description |
 | --- | --- | --- |
 | unixTimestamp | <code>number</code> | Unix timestamp. |
+| format | <code>string</code> | Timestamp format. |
 
