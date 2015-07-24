@@ -15,7 +15,8 @@
   * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
   * [.getUtils()](#API+getUtils) ⇒ <code>Object</code>
   * [.getSteam()](#API+getSteam) ⇒ <code>Object</code>
-  * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
+  * [.getConfig(complete)](#API+getConfig) ⇒ <code>Object</code>
+  * [.saveConfig(configObject)](#API+saveConfig)
   * [.emitEvent(event, data)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
@@ -64,11 +65,26 @@ This is useful for all the ESomething enums.
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Steam.  
 <a name="API+getConfig"></a>
-### apI.getConfig() ⇒ <code>Object</code>
-Returns config for this specific plugin.
+### apI.getConfig(complete) ⇒ <code>Object</code>
+Returns Vapor config object.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Config object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| complete | <code>Boolean</code> | If true, function will return complete Vapor config. Otherwise function will return only plugin-specific config. Defaults to false. |
+
+<a name="API+saveConfig"></a>
+### apI.saveConfig(configObject)
+Saves config object back to file.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| configObject | <code>Object</code> | Configuration object to be saved. |
+
 <a name="API+emitEvent"></a>
 ### apI.emitEvent(event, data)
 Allows plugin to emit custom events via Vapors event emitter.
