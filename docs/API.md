@@ -18,7 +18,7 @@
   * [.getSteam()](#API+getSteam) ⇒ <code>Object</code>
   * [.getConfig(complete)](#API+getConfig) ⇒ <code>Object</code>
   * [.saveConfig(configObject)](#API+saveConfig)
-  * [.emitEvent(event, data)](#API+emitEvent)
+  * [.emitEvent(event, ...data)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
   * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
@@ -92,7 +92,7 @@ Saves config object back to file.
 | configObject | <code>Object</code> | Configuration object to be saved. |
 
 <a name="API+emitEvent"></a>
-### apI.emitEvent(event, data)
+### apI.emitEvent(event, ...data)
 Allows plugin to emit custom events via Vapors event emitter.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -100,7 +100,7 @@ Allows plugin to emit custom events via Vapors event emitter.
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>string</code> | Event name. |
-| data | <code>\*</code> | Data. |
+| ...data | <code>\*</code> | Data. |
 
 <a name="API+registerHandler"></a>
 ### apI.registerHandler(options, callback)
