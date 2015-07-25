@@ -12,11 +12,23 @@ var utils = new Utils(VaporDummy);
 describe('Utils class tests', function () {
 
     it('identifies vapor admin', function(done) {
-        var result_true = utils.isAdmin("76561197960435530");
-        var result_false = utils.isAdmin("76561197965532939");
+        var result_true = utils.isAdmin("7656");
+        var result_false = utils.isAdmin("7655");
 
         expect(result_true).to.be.true;
         expect(result_false).to.be.false;
+
+        return done();
+    });
+
+    it('provides easy-to-read user description', function(done) {
+        var result1 = utils.getUserDescription("7656");
+        var result2 = utils.getUserDescription("7655");
+        var result3 = utils.getUserDescription("7656", "%username [%steamid]");
+
+        expect(result1).to.be.equal("vapor (7656)");
+        expect(result2).to.be.equal("<unknown> (7655)");
+        expect(result3).to.be.equal("vapor [7656]");
 
         return done();
     });

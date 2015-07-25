@@ -162,6 +162,7 @@ Returns logger prefixed with plugin's name.
 * [Utils](#Utils)
   * [new Utils(Vapor)](#new_Utils_new)
   * [.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>
+  * [.getUserDescription(steamID, format)](#Utils+getUserDescription) ⇒ <code>string</code>
   * [.getShortPluginName(pluginName)](#Utils+getShortPluginName) ⇒ <code>string</code>
   * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
   * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
@@ -189,6 +190,18 @@ Returns whether a user is admin or not.
 | Param | Type | Description |
 | --- | --- | --- |
 | steamID | <code>string</code> | User's Steam ID. |
+
+<a name="Utils+getUserDescription"></a>
+### utils.getUserDescription(steamID, format) ⇒ <code>string</code>
+Returns easy-to-read user description.
+
+**Kind**: instance method of <code>[Utils](#Utils)</code>  
+**Returns**: <code>string</code> - User's description.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| steamID | <code>string</code> | User's Steam ID. |
+| format | <code>string</code> | Format string. |
 
 <a name="Utils+getShortPluginName"></a>
 ### utils.getShortPluginName(pluginName) ⇒ <code>string</code>
