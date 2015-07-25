@@ -195,6 +195,11 @@ Returns whether a user is admin or not.
 ### utils.getUserDescription(steamID, format) ⇒ <code>string</code>
 Returns easy-to-read user description.
 
+Format allows placeholders:
+* %username - for Steam username
+* %steamid64 - for 64 bit SteamID
+* %accountid - for account ID
+
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>string</code> - User's description.  
 
