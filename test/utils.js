@@ -2,7 +2,7 @@
 /* jshint expr:true */
 
 var Steam = require('steam');
-var VaporDummy = require('./vapordummy.js');
+var VaporDummy = require('./vapormock.js');
 var expect = require('chai').expect;
 
 var Utils = require('../lib/utils.js');
