@@ -18,10 +18,10 @@
 * [API](#API)
   * [new API(Vapor, pluginName)](#new_API_new)
   * [.shutdown()](#API+shutdown)
-  * [.getClient()](#API+getClient) ⇒ <code>Object</code>
+  * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
   * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
-  * [.getUtils()](#API+getUtils) ⇒ <code>Object</code>
-  * [.getSteam()](#API+getSteam) ⇒ <code>Object</code>
+  * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
+  * [.getSteam()](#API+getSteam) ⇒ <code>Steam</code>
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
   * [.saveConfig(configObject)](#API+saveConfig)
   * [.emitEvent(event, ...data)](#API+emitEvent)
@@ -48,11 +48,11 @@ Disconnects from Steam network and completely shuts down Vapor process.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="API+getClient"></a>
-### apI.getClient() ⇒ <code>Object</code>
+### apI.getClient() ⇒ <code>SteamClient</code>
 Returns active Steam client used by Vapor.
 
 **Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>Object</code> - Active Steam client.  
+**Returns**: <code>SteamClient</code> - Active Steam client.  
 <a name="API+getHandler"></a>
 ### apI.getHandler(handler) ⇒ <code>Object</code>
 Returns active Steam handler used by Vapor.
@@ -65,19 +65,19 @@ Returns active Steam handler used by Vapor.
 | handler | <code>string</code> | Can be either 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'steamGroups'. |
 
 <a name="API+getUtils"></a>
-### apI.getUtils() ⇒ <code>Object</code>
+### apI.getUtils() ⇒ <code>[Utils](#Utils)</code>
 Returns instance of Utils class.
 
 **Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>Object</code> - Instantiated Utils class.  
+**Returns**: <code>[Utils](#Utils)</code> - Instantiated Utils class.  
 <a name="API+getSteam"></a>
-### apI.getSteam() ⇒ <code>Object</code>
+### apI.getSteam() ⇒ <code>Steam</code>
 Returns Steam object.
 
 This is useful for all the ESomething enums.
 
 **Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>Object</code> - Steam.  
+**Returns**: <code>Steam</code> - Steam.  
 <a name="API+getConfig"></a>
 ### apI.getConfig() ⇒ <code>Object</code>
 Returns Vapor config object.
@@ -306,3 +306,4 @@ if not provided.
 | --- | --- | --- |
 | unixTimestamp | <code>number</code> | Unix timestamp. |
 | format | <code>string</code> | Timestamp format. |
+
