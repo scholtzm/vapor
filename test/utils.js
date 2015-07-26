@@ -2,12 +2,12 @@
 /* jshint expr:true */
 
 var Steam = require('steam');
-var VaporDummy = require('./vapormock.js');
+var VaporMock = require('./vapormock.js');
 var expect = require('chai').expect;
 
 var Utils = require('../lib/utils.js');
 
-var utils = new Utils(VaporDummy);
+var utils = new Utils(VaporMock);
 
 describe('Utils class tests', function () {
 
@@ -31,20 +31,6 @@ describe('Utils class tests', function () {
         expect(result2).to.be.equal("<unknown> (7655)");
         expect(result3).to.be.equal("vapor [7656]");
         expect(result4).to.be.equal("vapor / 7656 / 7656");
-
-        return done();
-    });
-
-    it('gives me short plugin name', function(done) {
-        var result1 = utils.getShortPluginName("vapor-test-name");
-        var result2 = utils.getShortPluginName("test-name-vapor");
-        var result3 = utils.getShortPluginName("vapor-");
-        var result4 = utils.getShortPluginName("test-name-vapor-");
-
-        expect(result1).to.be.equal("test-name");
-        expect(result2).to.be.equal("test-name-vapor");
-        expect(result3).to.be.equal("");
-        expect(result4).to.be.equal("test-name-vapor-");
 
         return done();
     });
