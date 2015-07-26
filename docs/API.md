@@ -29,6 +29,7 @@
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
   * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
+  * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
 ### new API(Vapor, pluginName)
@@ -65,13 +66,14 @@ Returns active Steam handler used by Vapor.
 
 <a name="API+getUtils"></a>
 ### apI.getUtils() ⇒ <code>Object</code>
-Returns Utils class.
+Returns instance of Utils class.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Instantiated Utils class.  
 <a name="API+getSteam"></a>
 ### apI.getSteam() ⇒ <code>Object</code>
 Returns Steam object.
+
 This is useful for all the ESomething enums.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -155,6 +157,20 @@ Returns logger prefixed with plugin's name.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Logger.  
+<a name="API+webLogOn"></a>
+### apI.webLogOn()
+Calls Vapor's internal webLogOn method.
+
+Listen to `cookies` event to receive new array of cookies.
+
+You should call this function ONLY if you believe cookies have expired, e.g.
+you logged into your account from another IP / browser and you are getting
+HTTP 403 etc.
+
+You do NOT have to call this method on startup as it's automatically called
+by Vapor after successfully logging in.
+
+**Kind**: instance method of <code>[API](#API)</code>  
 <a name="Utils"></a>
 ## Utils
 **Kind**: global class  
@@ -280,7 +296,8 @@ Converts 64 bit SteamID string to account ID.
 ### utils.getTimestamp(unixTimestamp, format) ⇒ <code>string</code>
 Converts unix timestamp into formatted timestamp.
 
-The timestamp format is taken from Vapor's logs configuration.
+The timestamp format is taken from Vapor's logs configuration
+if not provided.
 
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>string</code> - Formatted timestamp.  
@@ -289,4 +306,3 @@ The timestamp format is taken from Vapor's logs configuration.
 | --- | --- | --- |
 | unixTimestamp | <code>number</code> | Unix timestamp. |
 | format | <code>string</code> | Timestamp format. |
-
