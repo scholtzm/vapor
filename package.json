@@ -1,5 +1,5 @@
 {
-  "name": "Vapor",
+  "name": "vapor",
   "version": "0.7.0",
   "description": "Automated extensible Steam client.",
   "main": "index.js",
@@ -34,6 +34,7 @@
     "test": "mocha spec"
   },
   "engines": {
-    "node": "0.12.x"
+    "node": ">= 0.12.0",
+    "iojs": ">= 1.0.0"
   }
 }
