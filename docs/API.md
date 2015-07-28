@@ -39,7 +39,7 @@ Instance of this class is passed to plugins exported function.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Vapor | <code>Object</code> | Vapor instance. |
+| Vapor | <code>Vapor</code> | Vapor instance. |
 | pluginName | <code>string</code> | Specific plugin name which uses this API instance. |
 
 <a name="API+shutdown"></a>
@@ -62,7 +62,7 @@ Returns active Steam handler used by Vapor.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| handler | <code>string</code> | Can be either 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'steamGroups'. |
+| handler | <code>string</code> | Can be either `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `steamGroups`. |
 
 <a name="API+getUtils"></a>
 ### apI.getUtils() ⇒ <code>[Utils](#Utils)</code>
@@ -74,7 +74,7 @@ Returns instance of Utils class.
 ### apI.getSteam() ⇒ <code>Steam</code>
 Returns Steam object.
 
-This is useful for all the ESomething enums.
+This is especially useful for all the ESomething enums.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Steam</code> - Steam.  
@@ -98,6 +98,10 @@ Saves config object back to file.
 ### apI.emitEvent(event, ...data)
 Allows plugin to emit custom events via Vapors event emitter.
 
+This function allows to pass multiple data arguments.
+
+Also see [registerHandler](#API+registerHandler).
+
 **Kind**: instance method of <code>[API](#API)</code>  
 
 | Param | Type | Description |
@@ -105,30 +109,48 @@ Allows plugin to emit custom events via Vapors event emitter.
 | event | <code>string</code> | Event name. |
 | ...data | <code>\*</code> | Data. |
 
+**Example**  
+```js
+API.emitEvent('myCustomPluginEvent', someString, someObject);
+```
 <a name="API+registerHandler"></a>
 ### apI.registerHandler(options, callback)
 Allows plugin to register custom handler for any event.
+
+Also see [emitEvent](#API+emitEvent).
 
 **Kind**: instance method of <code>[API](#API)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `plugin`. |
 | options.plugin | <code>string</code> | If emitter is plugin, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
 
 **Example**  
 ```js
+// Listen to 'friendMsg' event emitted by 'steamFriends'
 API.registerHandler({
-        emitter: 'steam',
+        emitter: 'steamFriends',
         event: 'friendMsg'
     },
     function(user, message, type) {
         if(type === Steam.EChatEntryType.ChatMsg) {
             log.info(user + " says: " + message);
         }
+    }
+);
+
+// Listen to another plugin's custom event
+API.registerHandler({
+        emitter: 'plugin',
+        plugin: 'another-plugin-name'
+        event: 'myCustomPluginEvent'
+    },
+    function(someString, someObject) {
+        log.info(someString, someObject);
     }
 );
 ```
@@ -141,7 +163,7 @@ Allows plugin to remove all handlers for a specific event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either 'vapor', 'client', 'steamUser', 'steamFriends', 'steamTrading', 'steamGameCoordinator' or 'plugin'. |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `plugin`. |
 | options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
@@ -149,11 +171,13 @@ Allows plugin to remove all handlers for a specific event.
 ### apI.getDataFolderPath() ⇒ <code>string</code>
 Returns plugin's data folder path.
 
+Plugin can use this folder to store persistent data.
+
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>string</code> - Full path to plugin's data folder.  
 <a name="API+getLogger"></a>
 ### apI.getLogger() ⇒ <code>Object</code>
-Returns logger prefixed with plugin's name.
+Returns wrapped logger instance prefixed with plugin's name.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Logger.  
@@ -179,7 +203,6 @@ by Vapor after successfully logging in.
   * [new Utils(Vapor)](#new_Utils_new)
   * [.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>
   * [.getUserDescription(steamID, format)](#Utils+getUserDescription) ⇒ <code>string</code>
-  * [.getShortPluginName(pluginName)](#Utils+getShortPluginName) ⇒ <code>string</code>
   * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
   * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
   * [.accountIDToSteamID(accountID)](#Utils+accountIDToSteamID) ⇒ <code>string</code>
@@ -223,17 +246,6 @@ Format allows placeholders:
 | --- | --- | --- |
 | steamID | <code>string</code> | User's Steam ID. |
 | format | <code>string</code> | Format string. |
-
-<a name="Utils+getShortPluginName"></a>
-### utils.getShortPluginName(pluginName) ⇒ <code>string</code>
-Removes 'vapor-' prefix from plugin name.
-
-**Kind**: instance method of <code>[Utils](#Utils)</code>  
-**Returns**: <code>string</code> - Shortened plugin name.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| pluginName | <code>string</code> | Plugin name. |
 
 <a name="Utils+stringToEnum"></a>
 ### utils.stringToEnum(string, enumList) ⇒ <code>number</code>
