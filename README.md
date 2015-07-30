@@ -1,7 +1,7 @@
 [![Dependency Status](https://david-dm.org/scholtzm/vapor.svg)](https://david-dm.org/scholtzm/vapor)
 [![devDependency Status](https://david-dm.org/scholtzm/vapor/dev-status.svg)](https://david-dm.org/scholtzm/vapor#info=devDependencies)
 
-# Vapor (BETA)
+# Vapor
 
 > Automated extensible [Steam](http://store.steampowered.com/about/) client for node.js.
 
@@ -9,7 +9,7 @@
 
 ## About
 
-The idea behind Vapor is simple - provide lightweight client which will contain only the most necessary functionality, such as being able to log in, and make this client's behaviour extensible by using plugins.
+Vapor is lightweight Steam client for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or logging of all the major Steam events and exposes simple API which allows custom plugins to extend its behaviour.
 
 This concept is very similar to [Stem](https://github.com/alvinl/stem), however the plugin system is slightly different.
 
