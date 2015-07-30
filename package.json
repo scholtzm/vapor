@@ -1,6 +1,6 @@
 {
   "name": "vapor",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Automated extensible Steam client.",
   "main": "index.js",
   "author": {
@@ -12,7 +12,7 @@
     "bytebuffer": "^4.0.0",
     "moment": "^2.10.6",
     "prompt": "^0.2.14",
-    "steam": "^1.0.0",
+    "steam": "^1.1.0",
     "steam-crypto": "0.0.1",
     "steam-groups": "^2.0.0",
     "winston": "^1.0.1"
