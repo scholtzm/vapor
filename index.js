@@ -3,7 +3,7 @@
  */
 var Vapor  = require('./lib/');
 
-var configPath = "./config";
+var configPath = './config';
 if(process.argv.length > 2)
     configPath = process.argv[2];
 

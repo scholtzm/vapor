@@ -3,15 +3,15 @@
  */
 module.exports = {
     config: {
-        admins: ["7656"],
+        admins: ['7656'],
         logs: {
-            dateFormat: "YYYY-MM-DD HH:mm:ss"
+            dateFormat: 'YYYY-MM-DD HH:mm:ss'
         }
     },
     steamFriends: {
         personaStates: {
-            "7656": {
-                player_name: "vapor"
+            '7656': {
+                player_name: 'vapor'
             }
         }
     }

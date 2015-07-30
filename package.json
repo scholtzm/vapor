@@ -1,6 +1,6 @@
 {
   "name": "vapor",
-  "version": "0.7.0",
+  "version": "0.6.1",
   "description": "Automated extensible Steam client.",
   "main": "index.js",
   "author": {
