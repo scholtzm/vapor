@@ -1,16 +1,7 @@
 /**
- * Main entry point
+ * vapor
+ * Copyright(c) 2015 Michael Scholtz
+ * MIT Licensed
  */
-var Vapor  = require('./lib/');
 
-var configPath = './config';
-if(process.argv.length > 2)
-    configPath = process.argv[2];
-
-var config = require(configPath);
-
-// Create new Vapor instance
-var vapor  = new Vapor();
-
-// Let's go!
-vapor.init(config);
+module.exports = require('./lib');

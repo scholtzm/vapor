@@ -1,7 +1,7 @@
 {
   "name": "vapor",
-  "version": "0.7.1",
-  "description": "Automated extensible Steam client.",
+  "version": "0.8.0",
+  "description": "Lightweight Steam client framework for node.js",
   "main": "index.js",
   "author": {
     "name": "Michael Scholtz",
@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bytebuffer": "^4.0.0",
+    "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
     "prompt": "^0.2.14",
     "steam": "^1.1.0",
