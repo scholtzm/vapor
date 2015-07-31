@@ -1,0 +1,10 @@
+{
+  "fileExtensions": [".js"],
+
+  "requireParenthesesAroundIIFE": true,
+  "validateLineBreaks": "LF",
+  "validateIndentation": 4,
+  "validateQuoteMarks": "'",
+
+  "disallowEmptyBlocks": true
+}

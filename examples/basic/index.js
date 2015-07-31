@@ -26,8 +26,8 @@ var bot = vapor();
 // Initialize bot with our config
 bot.init(config);
 
-// Use essentials - adds logging for all major events
-bot.essentials();
+// Use essentials
+bot.use('essentials', vapor.plugins.essentials);
 
 // Use couple built-in plugins
 bot.use('decline-friend-requests', vapor.plugins.declineFriendRequests);
