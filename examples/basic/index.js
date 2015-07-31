@@ -36,10 +36,10 @@ bot.use('decline-trade-requests', vapor.plugins.declineTradeRequests);
 bot.use('offline-messages', vapor.plugins.offlineMessages);
 
 // Start the bot
-bot.start();
+bot.connect();
 
-// Handle SIGINT gracefully
+// Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot.shutdown();
+    bot.disconnect();
     setTimeout(process.exit, 1000, 0);
 });
