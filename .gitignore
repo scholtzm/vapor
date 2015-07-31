@@ -3,7 +3,3 @@
 .DS_Store
 node_modules
 npm-debug.log
-
-# Ignore all *config.json files except for the sample config.
-*config.json
-!sample.config.json
