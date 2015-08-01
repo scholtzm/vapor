@@ -29,6 +29,8 @@ bot.init(config);
 bot.use('essentials', vapor.plugins.essentials);
 
 // Use our custom 'pong' plugin
+// We will use the provided VaporAPI argument
+// It's not recommended to access Vapor instance directly
 bot.use('pong', function(VaporAPI) {
     var Steam = VaporAPI.getSteam();
     var steamFriends = VaporAPI.getHandler('steamFriends');
