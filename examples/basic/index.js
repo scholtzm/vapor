@@ -3,7 +3,6 @@ var vapor = require('../../');
 // Load sensitive data from ENV variables
 var username = process.env.VAPOR_USER;
 var password = process.env.VAPOR_PASS;
-var admin = process.env.VAPOR_ADMIN;
 
 // Create our config object
 var config = {
@@ -11,7 +10,7 @@ var config = {
     password: password,
     displayName: 'Vapor Example - Basic',
     state: 'Online',
-    admins: [ admin ],
+    admins: [],
     logs: {
         dateFormat: 'YYYY-MM-DD HH:mm:ss',
         consoleLevel: 'debug',

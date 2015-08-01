@@ -5,7 +5,7 @@ Simple example which demonstrates how to make a pretty basic bot.
 ### Run
 
 ```sh
-$ VAPOR_USER=username VAPOR_PASS=password VAPOR_ADMIN=steamID64 node index.js
+$ VAPOR_USER=username VAPOR_PASS=password node index.js
 ```
 
-Replace `username`, `password` and `steamID64` with real values.
+Replace `username`, `password` with real values.
