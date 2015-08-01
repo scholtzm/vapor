@@ -1,6 +1,6 @@
-# Vapor Example - Basic
+# Vapor Example - Pong
 
-Simple example which demonstrates how to make a pretty basic bot.
+Simple example which demonstrates a bot that reacts to chat message "ping".
 
 ### Run
 
