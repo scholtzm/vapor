@@ -3,13 +3,13 @@
 
 # Vapor
 
-> Automated extensible [Steam](http://store.steampowered.com/about/) client for node.js.
+> Lightweight [Steam](http://store.steampowered.com/about/) client framework for node.js.
 
 ![vapor](https://cloud.githubusercontent.com/assets/2640934/8464564/6946c9be-2043-11e5-9189-d5fe5e334c88.png)
 
 ## About
 
-Vapor is lightweight Steam client for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or logging of all the major Steam events and exposes simple API which allows custom plugins to extend its behaviour.
+Vapor is lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or logging of all the major Steam events and exposes simple API which allows custom plugins to extend its behaviour.
 
 This concept is very similar to [Stem](https://github.com/alvinl/stem), however the plugin system is slightly different.
 
