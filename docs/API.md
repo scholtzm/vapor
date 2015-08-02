@@ -19,7 +19,8 @@
 
 * [API](#API)
   * [new API(Vapor, pluginName, data)](#new_API_new)
-  * [.shutdown()](#API+shutdown)
+  * [.connect()](#API+connect)
+  * [.disconnect()](#API+disconnect)
   * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
   * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
   * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
@@ -44,9 +45,14 @@ Instance of this class is passed to plugins exported function.
 | pluginName | <code>string</code> | Specific plugin name which uses this API instance. |
 | data | <code>Object</code> | Data object that is passed to API instance. |
 
-<a name="API+shutdown"></a>
-### apI.shutdown()
-Disconnects from Steam network and completely shuts down Vapor process.
+<a name="API+connect"></a>
+### apI.connect()
+Connect to Steam network.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+<a name="API+disconnect"></a>
+### apI.disconnect()
+Disconnect from Steam network.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="API+getClient"></a>

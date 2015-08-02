@@ -5,7 +5,7 @@
 * [Vapor](#Vapor)
   * [new Vapor()](#new_Vapor_new)
   * [.init(config)](#Vapor+init)
-  * [.use(pluginName, plugin, data)](#Vapor+use)
+  * [.use(plugin, data)](#Vapor+use)
   * [.connect()](#Vapor+connect)
   * [.disconnect()](#Vapor+disconnect)
 
@@ -24,17 +24,19 @@ var bot = vapor();
 ### vapor.init(config)
 Initializes Vapor instance.
 
-Properties:
+Config properties:
 * `username` - username used for logging in
 * `password` - password used for logging in
 * `displayName` - this is the name everyone else sees
-* `state` - initial online statusCode
+* `state` - initial online state
 * `admins` - array of SteamID64 strings
 * `logs` - settings used by the logger
 * `logs.dateFormat` - date format used by the logger
 * `logs.consoleLevel` - logger level used in the console
 * `logs.fileLevel` - logger level used in the file
 * `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
+
+All config properties are required.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
@@ -45,7 +47,6 @@ Properties:
 **Example**  
 ```js
 // Example config object
-// All properties are required
 // This can be loaded from JSON file of course
 var config = {
     username: 'myUsername',
@@ -55,23 +56,24 @@ var config = {
     admins: [ '7656123456', '7656987654' ],
     logs: {
         dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'debug',
+        consoleLevel: 'info',
         fileLevel: 'debug'
     },
     dataDir: './data'
 };
 ```
 <a name="Vapor+use"></a>
-### vapor.use(pluginName, plugin, data)
-Vapor's plugin loader.
+### vapor.use(plugin, data)
+Use external plugin.
+
+You can either specify a built-in plugin or use your own custom plugin.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pluginName | <code>string</code> | Plugin's unique identifier. |
-| plugin | <code>function</code> | Main plugin function. |
-| data | <code>\*</code> | Extra data passed to VaporAPI. If you need multiple values, use object. |
+| plugin | <code>Object</code> | Plugin object. |
+| data | <code>\*</code> | Extra data passed to VaporAPI. Use `object` for multiple values. |
 
 <a name="Vapor+connect"></a>
 ### vapor.connect()
