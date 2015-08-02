@@ -4,6 +4,8 @@ Most of the docs in this folder are automatically generated.
 
 ### Contents
 
+* __VAPOR.md__
+  * Description of Vapor's class methods and properties
 * __API.md__
   * Description of API class methods and properties
   * Description of Utils class methods and properties

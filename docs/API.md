@@ -13,27 +13,28 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | pluginName | <code>string</code> | Name of the plugin which uses this specific API instance. |
+| data | <code>Object</code> | Data object that is passed to API instance. |
+| dataDir | <code>string</code> | Path to data directory for this specific plugin and username. |
 
 
 * [API](#API)
-  * [new API(Vapor, pluginName)](#new_API_new)
+  * [new API(Vapor, pluginName, data)](#new_API_new)
   * [.shutdown()](#API+shutdown)
   * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
   * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
   * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
   * [.getSteam()](#API+getSteam) ⇒ <code>Steam</code>
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
-  * [.saveConfig(configObject)](#API+saveConfig)
   * [.emitEvent(event, ...args)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
-  * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
-### new API(Vapor, pluginName)
+### new API(Vapor, pluginName, data)
 API class constructor.
+
 Instance of this class is passed to plugins exported function.
 
 
@@ -41,6 +42,7 @@ Instance of this class is passed to plugins exported function.
 | --- | --- | --- |
 | Vapor | <code>Vapor</code> | Vapor instance. |
 | pluginName | <code>string</code> | Specific plugin name which uses this API instance. |
+| data | <code>Object</code> | Data object that is passed to API instance. |
 
 <a name="API+shutdown"></a>
 ### apI.shutdown()
@@ -84,16 +86,6 @@ Returns Vapor config object.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Config object.  
-<a name="API+saveConfig"></a>
-### apI.saveConfig(configObject)
-Saves config object back to file.
-
-**Kind**: instance method of <code>[API](#API)</code>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| configObject | <code>Object</code> | Configuration object to be saved. |
-
 <a name="API+emitEvent"></a>
 ### apI.emitEvent(event, ...args)
 Allows plugin to emit custom events via Vapor's event emitter.
@@ -167,14 +159,6 @@ Allows plugin to remove all handlers for a specific event.
 | options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
-<a name="API+getDataFolderPath"></a>
-### apI.getDataFolderPath() ⇒ <code>string</code>
-Returns plugin's data folder path.
-
-Plugin can use this folder to store persistent data.
-
-**Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>string</code> - Full path to plugin's data folder.  
 <a name="API+getLogger"></a>
 ### apI.getLogger() ⇒ <code>Object</code>
 Returns wrapped logger instance prefixed with plugin's name.

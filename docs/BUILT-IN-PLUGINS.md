@@ -13,6 +13,9 @@
 <p>Use this plugin if you don&#39;t want to deal with regular trading system.</p>
 <p><strong>Remark:</strong> This plugin does not decline trade offers.</p>
 </dd>
+<dt><a href="#module_essentials">essentials</a></dt>
+<dd><p>Automatically logs all major Steam events.</p>
+</dd>
 <dt><a href="#module_offline-messages">offline-messages</a></dt>
 <dd><p>Automatically removes and logs all pending chat messages.</p>
 <p>Use this plugin if you want to get rid of pending notifications
@@ -48,6 +51,15 @@ Automatically declines all trade requests.
 Use this plugin if you don't want to deal with regular trading system.
 
 **Remark:** This plugin does not decline trade offers.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+<a name="module_essentials"></a>
+## essentials
+Automatically logs all major Steam events.
 
 
 | Param | Type | Description |
