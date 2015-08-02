@@ -26,13 +26,13 @@ var bot = vapor();
 bot.init(config);
 
 // Use essentials
-bot.use('essentials', vapor.plugins.essentials);
+bot.use(vapor.plugins.essentials);
 
 // Use couple built-in plugins
-bot.use('decline-friend-requests', vapor.plugins.declineFriendRequests);
-bot.use('decline-group-invites', vapor.plugins.declineGroupInvites);
-bot.use('decline-trade-requests', vapor.plugins.declineTradeRequests);
-bot.use('offline-messages', vapor.plugins.offlineMessages);
+bot.use(vapor.plugins.declineFriendRequests);
+bot.use(vapor.plugins.declineGroupInvites);
+bot.use(vapor.plugins.declineTradeRequests);
+bot.use(vapor.plugins.offlineMessages);
 
 // Start the bot
 bot.connect();

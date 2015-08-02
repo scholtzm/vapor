@@ -26,27 +26,30 @@ var bot = vapor();
 bot.init(config);
 
 // Use essentials
-bot.use('essentials', vapor.plugins.essentials);
+bot.use(vapor.plugins.essentials);
 
 // Use our custom 'pong' plugin
 // We will use the provided VaporAPI argument
 // It's not recommended to access Vapor instance directly
-bot.use('pong', function(VaporAPI) {
-    var Steam = VaporAPI.getSteam();
-    var steamFriends = VaporAPI.getHandler('steamFriends');
+bot.use({
+    name: 'pong',
+    plugin: function(VaporAPI) {
+        var Steam = VaporAPI.getSteam();
+        var steamFriends = VaporAPI.getHandler('steamFriends');
 
-    VaporAPI.registerHandler({
-            emitter: 'steamFriends',
-            event: 'friendMsg'
-        },
-        function(user, message, type) {
-            if(type === Steam.EChatEntryType.ChatMsg) {
-                if(message === 'ping') {
-                    steamFriends.sendMessage(user, 'pong');
+        VaporAPI.registerHandler({
+                emitter: 'steamFriends',
+                event: 'friendMsg'
+            },
+            function(user, message, type) {
+                if(type === Steam.EChatEntryType.ChatMsg) {
+                    if(message === 'ping') {
+                        steamFriends.sendMessage(user, 'pong');
+                    }
                 }
             }
-        }
-    );
+        );
+    }
 });
 
 // Start the bot
