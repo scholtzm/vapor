@@ -28,7 +28,7 @@ describe('Utils class tests', function () {
         var result4 = utils.getUserDescription('7656', '%username / %steamid64 / %accountid');
 
         expect(result1).to.be.equal('vapor (7656)');
-        expect(result2).to.be.equal('<unknown> (7655)');
+        expect(result2).to.be.equal('[unknown] (7655)');
         expect(result3).to.be.equal('vapor [7656]');
         expect(result4).to.be.equal('vapor / 7656 / 7656');
 

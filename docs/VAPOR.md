@@ -36,6 +36,8 @@ Config properties:
 * `logs.fileLevel` - logger level used in the file
 * `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
 
+Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
+
 All config properties are required.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
@@ -46,8 +48,6 @@ All config properties are required.
 
 **Example**  
 ```js
-// Example config object
-// This can be loaded from JSON file of course
 var config = {
     username: 'myUsername',
     password: 'myPassword',
