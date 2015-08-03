@@ -1,6 +1,6 @@
 # Vapor Example - No Swearing
 
-Example of custom plugin which will warn or kick the user if he uses a swear word.
+Example of custom plugin which will warn or kick the user (non-admin) if he uses a swear word.
 
 This example was originally in the Wiki.
 
