@@ -14,7 +14,6 @@
 | --- | --- | --- |
 | pluginName | <code>string</code> | Name of the plugin which uses this specific API instance. |
 | data | <code>Object</code> | Data object that is passed to API instance. |
-| dataDir | <code>string</code> | Path to data directory for this specific plugin and username. |
 
 
 * [API](#API)
@@ -29,6 +28,7 @@
   * [.emitEvent(event, ...args)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
+  * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
 
@@ -165,6 +165,14 @@ Allows plugin to remove all handlers for a specific event.
 | options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
+<a name="API+getDataFolderPath"></a>
+### apI.getDataFolderPath() ⇒ <code>string</code>
+Returns plugin's data folder path.
+
+Plugin can use this folder to store persistent data.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+**Returns**: <code>string</code> - Full path to plugin's data folder.  
 <a name="API+getLogger"></a>
 ### apI.getLogger() ⇒ <code>Object</code>
 Returns wrapped logger instance prefixed with plugin's name.

@@ -5,24 +5,40 @@
 
 > Lightweight [Steam](http://store.steampowered.com/about/) client framework for node.js.
 
-![vapor](https://cloud.githubusercontent.com/assets/2640934/8464564/6946c9be-2043-11e5-9189-d5fe5e334c88.png)
+![vapor](https://cloud.githubusercontent.com/assets/2640934/9032860/1cf00bb8-39c3-11e5-82a0-efe2807c8f62.png)
+
+## Install
+
+```sh
+npm install vapor
+```
+
+## Usage
+
+```js
+var vapor = require('vapor');
+
+var bot = vapor();
+bot.init({ /* username, password, etc. */ })
+bot.connect();
+```
 
 ## About
 
-Vapor is lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or logging of all the major Steam events and exposes simple API which allows custom plugins to extend its behaviour.
+Vapor is a lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or providing console and file logger and exposes simple API which allows custom plugins to extend its behaviour.
 
-This concept is very similar to [Stem](https://github.com/alvinl/stem), however the plugin system is slightly different.
+This concept is very similar to [Stem](https://github.com/alvinl/stem), however the main difference is, that Vapor is not a standalone application but rather a framework.
 
 ## Client
 
-Vapor's core (represented by this repo) provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) to connect to Steam servers.
+Vapor provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) to connect to Steam servers.
 
-Core represents several key features:
+Vapor represents several key features:
 - easy to update and does not have to be modified by the user
 - handles log in process, including auth codes and sentry files
-- logs major Steam events to console and file
 - provides API for plugins
 - makes it possible to run multiple bots using a single installation
+- provides a bunch of [built-in plugins](docs) to make your life easier
 
 Everything else needs to be programmed separately using plugin system.
 
@@ -47,6 +63,8 @@ Using this pattern, there are no hard dependencies between two plugins. If a plu
 ## More information
 
 Visit this repo's Wiki for more information regarding installation, configuration, API, plugins, etc.
+
+Examples are provided in the [examples](examples) folder.
 
 You can also find auto-generated API docs in the [docs](docs) folder.
 
