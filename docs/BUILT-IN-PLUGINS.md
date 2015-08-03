@@ -33,6 +33,10 @@ Use this plugin if you don't want to deal with friends list.
 | --- | --- | --- |
 | VaporAPI | <code>Object</code> | Instance of the API class. |
 
+**Example**  
+```js
+bot.use(vapor.plugins.declineFriendRequests);
+```
 <a name="module_decline-group-invites"></a>
 ## decline-group-invites
 Automatically declines all group invites.
@@ -44,6 +48,10 @@ Use this plugin if you don't want to deal with Steam group invites.
 | --- | --- | --- |
 | VaporAPI | <code>Object</code> | Instance of the API class. |
 
+**Example**  
+```js
+bot.use(vapor.plugins.declineGroupInvites);
+```
 <a name="module_decline-trade-requests"></a>
 ## decline-trade-requests
 Automatically declines all trade requests.
@@ -57,6 +65,10 @@ Use this plugin if you don't want to deal with regular trading system.
 | --- | --- | --- |
 | VaporAPI | <code>Object</code> | Instance of the API class. |
 
+**Example**  
+```js
+bot.use(vapor.plugins.declineTradeRequests);
+```
 <a name="module_essentials"></a>
 ## essentials
 Automatically logs all major Steam events.
@@ -66,6 +78,10 @@ Automatically logs all major Steam events.
 | --- | --- | --- |
 | VaporAPI | <code>Object</code> | Instance of the API class. |
 
+**Example**  
+```js
+bot.use(vapor.plugins.essentials);
+```
 <a name="module_offline-messages"></a>
 ## offline-messages
 Automatically removes and logs all pending chat messages.
@@ -78,3 +94,7 @@ related to offline messages.
 | --- | --- | --- |
 | VaporAPI | <code>Object</code> | Instance of the API class. |
 
+**Example**  
+```js
+bot.use(vapor.plugins.offlineMessages);
+```
