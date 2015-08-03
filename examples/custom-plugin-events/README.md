@@ -1,4 +1,4 @@
-# Vapor Example - Cross Plugin Events
+# Vapor Example - Custom Plugin Events
 
 Example of cross-plugin communication using custom events.
 
