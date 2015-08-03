@@ -8,7 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
     username: username,
     password: password,
-    displayName: 'Vapor Example - Pong',
+    displayName: 'Vapor Example - Hello World',
     state: 'Online',
     admins: [],
     logs: {
@@ -28,11 +28,11 @@ bot.init(config);
 // Use essentials
 bot.use(vapor.plugins.essentials);
 
-// Use our custom 'pong' plugin
+// Use our custom 'hello-world' plugin
 // We will use the provided VaporAPI argument
 // It's not recommended to access Vapor instance directly
 bot.use({
-    name: 'pong',
+    name: 'hello-world',
     plugin: function(VaporAPI) {
         var Steam = VaporAPI.getSteam();
         var steamFriends = VaporAPI.getHandler('steamFriends');
@@ -43,9 +43,7 @@ bot.use({
             },
             function(user, message, type) {
                 if(type === Steam.EChatEntryType.ChatMsg) {
-                    if(message === 'ping') {
-                        steamFriends.sendMessage(user, 'pong');
-                    }
+                    steamFriends.sendMessage(user, 'Hello World!');
                 }
             }
         );

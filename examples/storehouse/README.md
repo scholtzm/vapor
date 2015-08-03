@@ -1,4 +1,4 @@
-# Vapor Example - Pong
+# Vapor Example - Storehouse
 
 Simple example which demonstrates usage of external plugin.
 
@@ -8,7 +8,7 @@ Simple example which demonstrates usage of external plugin.
 npm install vapor-storehouse
 ```
 
-### Run
+### Usage
 
 ```sh
 VAPOR_USER=username VAPOR_PASS=password VAPOR_ADMIN=steamID64 node index.js

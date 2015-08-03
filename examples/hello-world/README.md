@@ -1,8 +1,8 @@
-# Vapor Example - Pong
+# Vapor Example - Hello World
 
-Simple example which demonstrates a bot that reacts to chat message "ping".
+"Hello World!" type of example. :grinning:
 
-### Run
+### Usage
 
 ```sh
 VAPOR_USER=username VAPOR_PASS=password node index.js

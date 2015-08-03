@@ -1,6 +1,6 @@
 # Vapor Docs Folder
 
-Most of the docs in this folder are automatically generated.
+Most of the docs in this folder are generated automatically.
 
 ### Contents
 

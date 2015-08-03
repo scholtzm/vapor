@@ -2,7 +2,7 @@
 
 Simple example which demonstrates how to make a pretty basic bot.
 
-### Run
+### Usage
 
 ```sh
 VAPOR_USER=username VAPOR_PASS=password node index.js

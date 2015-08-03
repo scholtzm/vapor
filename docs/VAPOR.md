@@ -61,12 +61,13 @@ var config = {
     },
     dataDir: './data'
 };
+bot.init(config);
 ```
 <a name="Vapor+use"></a>
 ### vapor.use(plugin, data)
-Use external plugin.
+Use plugin.
 
-You can either specify a built-in plugin or use your own custom plugin.
+You can either specify a built-in plugin or use a custom plugin.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 

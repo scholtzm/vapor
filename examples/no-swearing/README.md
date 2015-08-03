@@ -4,7 +4,7 @@ Example of custom plugin which will warn or kick the user (non-admin) if he uses
 
 This example was originally in the Wiki.
 
-### Run
+### Usage
 
 ```sh
 VAPOR_USER=username VAPOR_PASS=password VAPOR_ADMIN=steamID64 node index.js
