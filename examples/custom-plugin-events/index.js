@@ -8,7 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
     username: username,
     password: password,
-    displayName: 'Vapor Example - No Swearing',
+    displayName: 'Vapor Example - Custom Events',
     state: 'Online',
     admins: [],
     logs: {
