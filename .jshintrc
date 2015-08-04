@@ -2,5 +2,6 @@
   "node": true,
   "eqeqeq": true,
   "undef": true,
-  "unused": true
+  "unused": true,
+  "curly": true
 }

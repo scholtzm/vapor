@@ -1,5 +1,6 @@
 {
   "fileExtensions": [".js"],
+  "excludeFiles": ["node_modules/**"],
 
   "requireParenthesesAroundIIFE": true,
   "validateLineBreaks": "LF",

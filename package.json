@@ -28,11 +28,14 @@
     "mocha": "^2.2.5"
   },
   "scripts": {
+    "prepublish": "npm run test && npm run lint && npm run style",
     "docs": "npm run vapor-docs && npm run api-docs && npm run plugin-docs",
     "vapor-docs": "jsdoc2md lib/vapor.js > docs/VAPOR.md",
     "api-docs": "jsdoc2md lib/api.js lib/utils.js > docs/API.md",
     "plugin-docs": "jsdoc2md lib/plugins/*.js > docs/BUILT-IN-PLUGINS.md",
-    "test": "mocha spec"
+    "test": "mocha spec",
+    "lint": "jshint --exclude-path=./.gitignore .",
+    "style": "jscs ."
   },
   "engines": {
     "node": ">= 0.12.0",
