@@ -2,6 +2,8 @@
 
 "Hello World!" type of example. :grinning:
 
+This is pretty much the simplest plugin one can make.
+
 ### Usage
 
 ```sh

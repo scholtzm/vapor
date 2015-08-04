@@ -1,6 +1,8 @@
 # Vapor Example - Storehouse
 
-Simple example which demonstrates usage of external plugin.
+Simple example which demonstrates usage of external plugin and will automatically accept all incoming trade offers from admin.
+
+This example uses external plugin [`vapor-storehouse`](https://github.com/scholtzm/vapor-storehouse).
 
 ### Install
 

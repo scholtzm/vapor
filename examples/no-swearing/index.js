@@ -36,7 +36,8 @@ bot.use(vapor.plugins.declineGroupInvites);
 bot.use(vapor.plugins.declineTradeRequests);
 bot.use(vapor.plugins.offlineMessages);
 
-// Use external plugin and pass in config
+// Use external plugin
+// We optionally pass in data object which has property named config
 bot.use(noSwearing, {config: {
     words: ['cow', 'pig', 'rat'], // ... etc., you get the idea.
     action: 'warning'
