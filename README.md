@@ -1,6 +1,7 @@
 [![NPM version](http://img.shields.io/npm/v/vapor.svg?style=flat)](https://www.npmjs.org/package/vapor)
 [![Dependency Status](https://david-dm.org/scholtzm/vapor.svg)](https://david-dm.org/scholtzm/vapor)
 [![devDependency Status](https://david-dm.org/scholtzm/vapor/dev-status.svg)](https://david-dm.org/scholtzm/vapor#info=devDependencies)
+[![Build Status](https://travis-ci.org/scholtzm/vapor.svg?branch=master)](https://travis-ci.org/scholtzm/vapor)
 
 # Vapor
 
