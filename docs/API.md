@@ -261,7 +261,7 @@ Returns first enum value that matches the given string.
 ```js
 // returns 5, which is equal to Steam.EPersonaState.LookingToTrade
 var tradeState = utils.stringToEnum("trade", Steam.EPersonaState);
-client.setPersonaState(tradeState);
+steamFriends.setPersonaState(tradeState);
 ```
 <a name="Utils+enumToString"></a>
 ### utils.enumToString(value, enumList) ⇒ <code>string</code>

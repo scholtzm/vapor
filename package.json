@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bytebuffer": "^4.0.0",
+    "extend": "^3.0.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
     "prompt": "^0.2.14",

@@ -38,7 +38,7 @@ Config properties:
 
 Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
 
-All config properties are required.
+Only username and password are required. See 'misc.js' for defaults.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
