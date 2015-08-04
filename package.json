@@ -1,6 +1,6 @@
 {
   "name": "vapor",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Lightweight Steam client framework for node.js",
   "main": "index.js",
   "author": {
@@ -34,8 +34,7 @@
     "api-docs": "jsdoc2md lib/api.js lib/utils.js > docs/API.md",
     "plugin-docs": "jsdoc2md lib/plugins/*.js > docs/BUILT-IN-PLUGINS.md",
     "test": "mocha spec",
-    "lint": "jshint --exclude-path=./.gitignore .",
-    "style": "jscs ."
+    "lint": "jshint --exclude-path=./.gitignore . && jscs ."
   },
   "engines": {
     "node": ">= 0.12.0",
