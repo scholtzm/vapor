@@ -37,9 +37,9 @@ exports.plugin = function(VaporAPI) {
                         steamFriends.sendMessage(user, 'Please, do not use swear words.');
                     } else if(action === 'kick') {
                         steamFriends.removeFriend(user);
-                        log.warn('User with SteamID ' + user + ' was removed for swearing!');
+                        log.warn('User with SteamID %s was removed for swearing.', user);
                     } else {
-                        log.error('Unknown action: ' + action);
+                        log.error('Unknown action: %s', action);
                     }
                 }
 

@@ -67,9 +67,9 @@ bot.use({
                 event: 'upperCasedFriendMessage'
             },
             function(user, message, type) {
-                log.info('Received message from "myEmitter": ' + message);
-                log.info('This message was originally sent by: ' + user);
-                log.info('The message type is: ' + utils.enumToString(type, Steam.EChatEntryType));
+                log.info('Received message from "myEmitter": %s', message);
+                log.info('This message was originally sent by: %s', user);
+                log.info('The message type is: %s', utils.enumToString(type, Steam.EChatEntryType));
             }
         );
     }

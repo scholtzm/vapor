@@ -12,7 +12,7 @@
 ## Install
 
 ```sh
-npm install vapor
+npm install vapor --save
 ```
 
 ## Usage

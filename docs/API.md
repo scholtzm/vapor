@@ -13,7 +13,7 @@
 | Name | Type | Description |
 | --- | --- | --- |
 | pluginName | <code>string</code> | Name of the plugin which uses this specific API instance. |
-| data | <code>Object</code> | Data object that is passed to API instance. |
+| data | <code>Object</code> | Data object that is passed to API instance via `Vapor.use` method. |
 
 
 * [API](#API)
@@ -123,7 +123,7 @@ Also see [emitEvent](#API+emitEvent).
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
 | options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `plugin`. |
-| options.plugin | <code>string</code> | If emitter is plugin, this is plugin's name. |
+| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
 
@@ -233,9 +233,9 @@ Returns whether a user is admin or not.
 Returns easy-to-read user description.
 
 Format allows placeholders:
-* %username - for Steam username
-* %steamid64 - for 64 bit SteamID
-* %accountid - for account ID
+* `%username` - for Steam username
+* `%steamid64` - for 64 bit SteamID
+* `%accountid` - for account ID
 
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>string</code> - User's description.  
