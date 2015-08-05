@@ -12,7 +12,7 @@
 ## Install
 
 ```sh
-npm install vapor --save
+npm install vapor
 ```
 
 ## Usage
@@ -21,7 +21,10 @@ npm install vapor --save
 var vapor = require('vapor');
 
 var bot = vapor();
-bot.init({ /* username, password, etc. */ })
+bot.init({
+    username: 'myUsername',
+    password: 'myPassword'
+});
 bot.connect();
 ```
 

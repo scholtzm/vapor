@@ -35,10 +35,11 @@ Config properties:
 * `logs.consoleLevel` - logger level used in the console
 * `logs.fileLevel` - logger level used in the file
 * `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
+* `stdinSteamGuard` - use standard input for entering the SteamGuard code
 
 Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
 
-Only username and password are required. See 'misc.js' for defaults.
+Only `username` and `password` are required. See 'misc.js' for defaults.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
@@ -59,7 +60,8 @@ var config = {
         consoleLevel: 'info',
         fileLevel: 'debug'
     },
-    dataDir: './data'
+    dataDir: './data',
+    stdinSteamGuard: true
 };
 bot.init(config);
 ```
