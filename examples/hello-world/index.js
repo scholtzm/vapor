@@ -8,15 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
     username: username,
     password: password,
-    displayName: 'Vapor Example - Hello World',
-    state: 'Online',
-    admins: [],
-    logs: {
-        dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'debug',
-        fileLevel: 'debug'
-    },
-    dataDir: './data'
+    displayName: 'Vapor Example - Hello World'
 };
 
 // Create bot instance

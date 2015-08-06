@@ -11,14 +11,7 @@ var config = {
     username: username,
     password: password,
     displayName: 'Vapor Example - Storehouse',
-    state: 'Online',
-    admins: [ admin ],
-    logs: {
-        dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'debug',
-        fileLevel: 'debug'
-    },
-    dataDir: './data'
+    admins: [ admin ]
 };
 
 // Create bot instance

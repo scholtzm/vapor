@@ -4,6 +4,8 @@ This example demonstrates the possibility of plugging in a custom function which
 
 Once you have this example running, it will end with login error. This is correct since the auth code provided directly in the code is expected to fail.
 
+Notice the config object which contains `stdinSteamGuard` property set to `false`.
+
 ### Usage
 
 ```sh

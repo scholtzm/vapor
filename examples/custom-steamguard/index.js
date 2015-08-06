@@ -9,14 +9,6 @@ var config = {
     username: username,
     password: password,
     displayName: 'Vapor Example - Custom SteamGuard',
-    state: 'Online',
-    admins: [],
-    logs: {
-        dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'debug',
-        fileLevel: 'debug'
-    },
-    dataDir: './data',
     stdinSteamGuard: false // we need to set this to false
 };
 

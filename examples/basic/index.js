@@ -16,7 +16,8 @@ var config = {
         consoleLevel: 'debug',
         fileLevel: 'debug'
     },
-    dataDir: './data'
+    dataDir: './data',
+    stdinSteamGuard: true
 };
 
 // Create bot instance
