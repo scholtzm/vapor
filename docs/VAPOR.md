@@ -34,6 +34,7 @@ Config properties:
 * `logs.dateFormat` - date format used by the logger
 * `logs.consoleLevel` - logger level used in the console
 * `logs.fileLevel` - logger level used in the file
+* `logs.prefix` - messages are prefixed with bot's username
 * `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
 * `stdinSteamGuard` - use standard input for entering the SteamGuard code
 
@@ -52,13 +53,14 @@ Only `username` and `password` are required. See 'misc.js' for defaults.
 var config = {
     username: 'myUsername',
     password: 'myPassword',
-    displayName: 'Bot Name',
+    displayName: 'Vapor Bot',
     state: 'Online',
     admins: [ '7656123456', '7656987654' ],
     logs: {
         dateFormat: 'YYYY-MM-DD HH:mm:ss',
         consoleLevel: 'info',
-        fileLevel: 'debug'
+        fileLevel: 'debug',
+        prefix: false
     },
     dataDir: './data',
     stdinSteamGuard: true
