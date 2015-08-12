@@ -14,7 +14,8 @@ var config = {
     logs: {
         dateFormat: 'YYYY-MM-DD HH:mm:ss',
         consoleLevel: 'debug',
-        fileLevel: 'debug'
+        fileLevel: 'debug',
+        prefix: false
     },
     dataDir: './data',
     stdinSteamGuard: true

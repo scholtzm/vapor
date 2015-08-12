@@ -21,10 +21,7 @@ npm install vapor
 var vapor = require('vapor');
 
 var bot = vapor();
-bot.init({
-    username: 'myUsername',
-    password: 'myPassword'
-});
+bot.init({username: 'myUsername', password: 'myPassword'});
 bot.connect();
 ```
 
