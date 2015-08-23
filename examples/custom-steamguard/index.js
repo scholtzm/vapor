@@ -27,6 +27,7 @@ bot.use({
     plugin: function(VaporAPI) {
         var log = VaporAPI.getLogger();
 
+        // Register handler for `steamGuard` event
         VaporAPI.registerHandler({
                 emitter: 'vapor',
                 event: 'steamGuard'
@@ -40,7 +41,19 @@ bot.use({
                 log.info('Providing SteamGuard code %s.', code);
 
                 // We will get disconnected after this call as expected
+                // `error` event will be emitted afterwards
                 callback(code);
+            }
+        );
+
+        // Register handler for `error` event
+        // This event will be fired since the SteamGuard code provided above is incorrect
+        VaporAPI.registerHandler({
+                emitter: 'vapor',
+                event: 'error'
+            },
+            function(error) {
+                log.error('Vapor error caught: %s', error.message);
             }
         );
     }
