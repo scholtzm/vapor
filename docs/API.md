@@ -177,8 +177,23 @@ Plugin can use this folder to store persistent data.
 ### apI.getLogger() ⇒ <code>Object</code>
 Returns wrapped logger instance prefixed with plugin's name.
 
+Available levels:
+* log.verbose
+* log.debug
+* log.info
+* log.warn
+* log.error
+
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Logger.  
+**Example**  
+```js
+var log = VaporAPI.getLogger();
+
+log.info('This is a regular info message...');
+log.warn('...and this is a warning message.');
+log.debug('String %s works too!', 'formatting');
+```
 <a name="API+webLogOn"></a>
 ### apI.webLogOn()
 Calls Vapor's internal webLogOn method.

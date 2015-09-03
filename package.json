@@ -26,7 +26,7 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "jsdoc-to-markdown": "^1.1.1",
-    "mocha": "^2.2.5"
+    "mocha": "^2.3.0"
   },
   "scripts": {
     "docs": "npm run vapor-docs && npm run api-docs && npm run plugin-docs",
