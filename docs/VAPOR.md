@@ -36,7 +36,6 @@ Config properties:
 * `logs.fileLevel` - logger level used in the file
 * `logs.prefix` - messages are prefixed with bot's username
 * `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
-* `stdinSteamGuard` - use standard input for entering the SteamGuard code
 
 Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
 
@@ -63,7 +62,6 @@ var config = {
         prefix: false
     },
     dataDir: './data',
-    stdinSteamGuard: true
 };
 bot.init(config);
 ```

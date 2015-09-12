@@ -49,9 +49,12 @@ var bot2 = vapor();
 bot1.init(config1);
 bot2.init(config2);
 
-// Use essentials
+// Use essential built-in plugins
 bot1.use(vapor.plugins.essentials);
+bot1.use(vapor.plugins.stdinSteamGuard);
+
 bot2.use(vapor.plugins.essentials);
+bot2.use(vapor.plugins.stdinSteamGuard);
 
 // Use our chain loader plugin
 bot1.use(chainLoader, {bot: bot2});

@@ -17,8 +17,9 @@ var bot = vapor();
 // Initialize bot with our config
 bot.init(config);
 
-// Use essentials
+// Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
+bot.use(vapor.plugins.stdinSteamGuard);
 
 // Use our custom 'hello-world' plugin
 // We will use the provided VaporAPI argument

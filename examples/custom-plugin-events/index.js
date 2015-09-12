@@ -17,14 +17,9 @@ var bot = vapor();
 // Initialize bot with our config
 bot.init(config);
 
-// Use essentials
+// Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
-
-// Use other built-in plugins
-bot.use(vapor.plugins.declineFriendRequests);
-bot.use(vapor.plugins.declineGroupInvites);
-bot.use(vapor.plugins.declineTradeRequests);
-bot.use(vapor.plugins.offlineMessages);
+bot.use(vapor.plugins.stdinSteamGuard);
 
 // Create custom 'emitter' plugin
 bot.use({

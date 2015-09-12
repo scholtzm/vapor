@@ -8,8 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
     username: username,
     password: password,
-    displayName: 'Vapor Example - Custom SteamGuard',
-    stdinSteamGuard: false // we need to set this to false
+    displayName: 'Vapor Example - Custom SteamGuard'
 };
 
 // Create bot instance

@@ -21,6 +21,9 @@
 <p>Use this plugin if you want to get rid of pending notifications
 related to offline messages.</p>
 </dd>
+<dt><a href="#module_stdin-steamguard">stdin-steamguard</a></dt>
+<dd><p>Reads SteamGuard auth code from the standard input.</p>
+</dd>
 </dl>
 <a name="module_decline-friend-requests"></a>
 ## decline-friend-requests
@@ -97,4 +100,17 @@ related to offline messages.
 **Example**  
 ```js
 bot.use(vapor.plugins.offlineMessages);
+```
+<a name="module_stdin-steamguard"></a>
+## stdin-steamguard
+Reads SteamGuard auth code from the standard input.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.stdinSteamGuard);
 ```

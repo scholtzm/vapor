@@ -17,8 +17,7 @@ var config = {
         fileLevel: 'debug',
         prefix: false
     },
-    dataDir: './data',
-    stdinSteamGuard: true
+    dataDir: './data'
 };
 
 // Create bot instance
@@ -26,6 +25,9 @@ var bot = vapor();
 
 // Initialize bot with our config
 bot.init(config);
+
+// Use built-in plugin to easily enter SteamGuard code
+bot.use(vapor.plugins.stdinSteamGuard);
 
 // Start the bot
 bot.connect();
