@@ -4,4 +4,3 @@ node_js:
   - 'iojs'
 before_install:
   - export TZ=Europe/Paris
-  - date
