@@ -198,7 +198,7 @@ log.debug('String %s works too!', 'formatting');
 ### apI.webLogOn()
 Calls Vapor's internal webLogOn method.
 
-Listen to `cookies` event to receive new array of cookies.
+Listen to `cookies` event to receive new array of cookies and sessionid.
 
 You should call this function ONLY if you believe cookies have expired, e.g.
 you logged into your account from another IP / browser and you are getting
