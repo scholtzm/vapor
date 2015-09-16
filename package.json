@@ -25,7 +25,7 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "jsdoc-to-markdown": "^1.1.1",
-    "mocha": "^2.3.0"
+    "mocha": "^2.3.2"
   },
   "scripts": {
     "vapor-docs": "jsdoc2md lib/vapor.js > docs/VAPOR.md",
@@ -34,7 +34,7 @@
     "test": "mocha spec",
     "lint": "jshint --exclude-path=./.gitignore . && jscs .",
     "docs": "npm run vapor-docs && npm run api-docs && npm run plugin-docs",
-    "prepare": "npm test && npm run lint && npm run docs"
+    "all": "npm test && npm run lint && npm run docs"
   },
   "engines": {
     "node": ">= 0.12.0",
