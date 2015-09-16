@@ -1,6 +1,6 @@
 /**
  * Vapor
- * Copyright(c) 2015 Michael Scholtz
+ * Copyright (c) 2015 Michael Scholtz
  * MIT Licensed
  */
 
