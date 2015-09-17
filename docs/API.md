@@ -36,7 +36,7 @@
 ### new API(Vapor, pluginName, data)
 API class constructor.
 
-Instance of this class is passed to plugins exported function.
+Instance of this class is passed to plugins exported function as the only argument.
 
 
 | Param | Type | Description |
@@ -122,7 +122,7 @@ Also see [emitEvent](#API+emitEvent).
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `plugin`. |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
@@ -151,6 +151,16 @@ API.registerHandler({
         log.info(someString, someObject);
     }
 );
+
+// Listen to any 'debug' event
+API.registerHandler({
+        emitter: '*',
+        event: 'debug'
+    },
+    function() {
+        log.debug(arguments);
+    }
+);
 ```
 <a name="API+removeAllHandlers"></a>
 ### apI.removeAllHandlers(options)
@@ -161,8 +171,8 @@ Allows plugin to remove all handlers for a specific event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `plugin`. |
-| options.plugin | <code>string</code> | If emitter is 'plugin', this is plugin's name. |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
+| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. |
 | options.event | <code>string</code> | Event name. |
 
 <a name="API+getDataFolderPath"></a>
