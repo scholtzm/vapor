@@ -31,7 +31,7 @@
     "vapor-docs": "jsdoc2md lib/vapor.js > docs/VAPOR.md",
     "api-docs": "jsdoc2md lib/api.js lib/utils.js > docs/API.md",
     "plugin-docs": "jsdoc2md lib/plugins/*.js > docs/BUILT-IN-PLUGINS.md",
-    "test": "mocha spec",
+    "test": "TZ=Europe/London mocha spec",
     "lint": "jshint --exclude-path=./.gitignore . && jscs .",
     "docs": "npm run vapor-docs && npm run api-docs && npm run plugin-docs",
     "all": "npm test && npm run lint && npm run docs"

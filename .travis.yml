@@ -3,5 +3,3 @@ node_js:
   - '0.12'
   - '4'
   - 'iojs'
-before_install:
-  - export TZ=Europe/Paris

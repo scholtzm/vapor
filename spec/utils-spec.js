@@ -79,8 +79,8 @@ describe('Utils class tests', function () {
         var result1 = utils.getTimestamp(0);
         var result2 = utils.getTimestamp(0, 'DD.MM.YYYY HH:mm:ss');
 
-        expect(result1).to.be.equal('1970-01-01 01:00:00');
-        expect(result2).to.be.equal('01.01.1970 01:00:00');
+        expect(result1).to.be.equal('1970-01-01 00:00:00');
+        expect(result2).to.be.equal('01.01.1970 00:00:00');
 
         return done();
     });
