@@ -27,6 +27,7 @@
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
   * [.emitEvent(event, ...args)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
+  * [.hasHandler(options)](#API+hasHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
@@ -160,6 +161,25 @@ API.registerHandler({
         log.debug(arguments);
     }
 );
+```
+<a name="API+hasHandler"></a>
+### apI.hasHandler(options)
+Returns true if there is at least one handler for the given event, false otherwise.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | Options object. |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
+| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
+| options.event | <code>string</code> | Event name. |
+
+**Example**  
+```js
+if(API.hasHandler({emitter: 'steamUser', event: 'friendMsg'})) {
+    // do something ...
+}
 ```
 <a name="API+removeAllHandlers"></a>
 ### apI.removeAllHandlers(options)
