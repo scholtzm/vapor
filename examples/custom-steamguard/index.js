@@ -49,7 +49,7 @@ bot.use({
         // This event will be fired since the SteamGuard code provided above is incorrect
         VaporAPI.registerHandler({
                 emitter: 'vapor',
-                event: 'error'
+                event: 'disconnected'
             },
             function(error) {
                 log.error('Vapor error caught: %s', error.message);

@@ -21,11 +21,10 @@ VaporAPI.registerHandler({
 
 Cookies provided by Steam's `ISteamUserAuth/AuthenticateUser/v1` web API method. This event is emitted automatically by Vapor after successful login. This functionality was previously provided by node-steam's `webLogOn` method. You can also manually trigger this event by calling [API.webLogon](API.md#API+webLogOn) from your plugin.
 
-### error
+### disconnected
 * `error` - An `Error` object.
 
 This event is emitted when we get disconnected either by Steam servers going down or because of a login error.
-Not handling this event will result in Vapor crashing.
 
 Error properties:
 * `eresult` - Value corresponding to Steam's EResult enum.
