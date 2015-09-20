@@ -177,7 +177,7 @@ Returns true if there is at least one handler for the given event, false otherwi
 
 **Example**  
 ```js
-if(API.hasHandler({emitter: 'steamUser', event: 'friendMsg'})) {
+if(API.hasHandler({emitter: 'steamFriends', event: 'friendMsg'})) {
     // do something ...
 }
 ```

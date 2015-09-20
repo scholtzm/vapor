@@ -33,12 +33,13 @@ Error properties:
 *There's also a built-in plugin which will automatically reconnect Vapor client if the Steam servers are down.*
 
 ### readFile
-* `key` - File identifier.
-* `callback` - A callback function.
+* `fileName` - File identifier.
+* `callback` - Callback function to be called after the data is retrieved.
+  * `error` - Error, if the read operation fails.
   * `data` - Data received from the read operation.
 
 Emitted whenever Vapor needs to read a file, e.g. SteamGuard sentry file.
-This event allows you to implement your own file storage - file system, database, etc.
+This event allows you to implement your own storage - file system, database, etc.
 
 *There's also a built-in plugin which handles this event using file system.*
 
@@ -55,11 +56,12 @@ After you retrieve the auth code, call `callback` with the auth code as the only
 *There's also a built-in plugin which will read this code from standard input.*
 
 ### writeFile
-* `key` - File identifier.
+* `fileName` - File identifier.
 * `data` - Data to be persisted.
-* `callback` - Optional callback function to be called after the data is persisted.
+* `callback` - Callback function to be called after the data is persisted.
+  * `error` - Error, if the write operation fails.
 
 Emitted whenever Vapor needs to persist a file, e.g. SteamGuard sentry file.
-This event allows you to implement your own file storage - file system, database, etc.
+This event allows you to implement your own storage - file system, database, etc.
 
 *There's also a built-in plugin which handles this event using file system.*
