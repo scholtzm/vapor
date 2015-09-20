@@ -16,8 +16,7 @@ var config = {
         consoleLevel: 'debug',
         fileLevel: 'debug',
         prefix: false
-    },
-    dataDir: './data'
+    }
 };
 
 // Create bot instance

@@ -28,7 +28,6 @@
   * [.emitEvent(event, ...args)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
-  * [.getDataFolderPath()](#API+getDataFolderPath) ⇒ <code>string</code>
   * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
 
@@ -123,7 +122,7 @@ Also see [emitEvent](#API+emitEvent).
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
 | options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
-| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. |
+| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
 
@@ -172,17 +171,9 @@ Allows plugin to remove all handlers for a specific event.
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
 | options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
-| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. |
+| options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 
-<a name="API+getDataFolderPath"></a>
-### apI.getDataFolderPath() ⇒ <code>string</code>
-Returns plugin's data folder path.
-
-Plugin can use this folder to store persistent data.
-
-**Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>string</code> - Full path to plugin's data folder.  
 <a name="API+getLogger"></a>
 ### apI.getLogger() ⇒ <code>Object</code>
 Returns wrapped logger instance prefixed with plugin's name.

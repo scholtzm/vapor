@@ -31,6 +31,13 @@ Error properties:
 
 *There's also a built-in plugin which will automatically reconnect Vapor client if the Steam servers are down.*
 
+### readFile
+* `key` - File identifier.
+* `callback` - A callback function.
+  * `data` - Data received from the read operation.
+
+*There's also a built-in plugin.*
+
 ### ready
 
 Vapor has completely logged into Steam network.
@@ -42,3 +49,7 @@ Vapor has completely logged into Steam network.
 After you retrieve the auth code, call `callback` with the auth code as the only argument. Check out `custom-steamguard` example to see how this works.
 
 *There's also a built-in plugin which will read this code from standard input.*
+
+### writeFile
+
+*There's also a built-in plugin.*

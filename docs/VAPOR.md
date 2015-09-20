@@ -1,6 +1,12 @@
 <a name="Vapor"></a>
 ## Vapor
 **Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| servers | <code>Array.&lt;Object&gt;</code> | List of Steam servers. You can set this property to use your own up-to-date list of servers. **Remark:** This property can be only set before calling [init](#Vapor+init) method. |
+
 
 * [Vapor](#Vapor)
   * [new Vapor()](#new_Vapor_new)
@@ -35,7 +41,6 @@ Config properties:
 * `logs.consoleLevel` - logger level used in the console
 * `logs.fileLevel` - logger level used in the file
 * `logs.prefix` - messages are prefixed with bot's username
-* `dataDir` - path to directory that will be used to store data such as logs, sentry files etc.
 
 Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
 
@@ -60,8 +65,7 @@ var config = {
         consoleLevel: 'info',
         fileLevel: 'debug',
         prefix: false
-    },
-    dataDir: './data',
+    }
 };
 bot.init(config);
 ```

@@ -16,6 +16,9 @@
 <dt><a href="#module_essentials">essentials</a></dt>
 <dd><p>Automatically logs all major Steam events.</p>
 </dd>
+<dt><a href="#module_fs">fs</a></dt>
+<dd><p>Provides file system handler for all Vapor file operations.</p>
+</dd>
 <dt><a href="#module_offline-messages">offline-messages</a></dt>
 <dd><p>Automatically removes and logs all pending chat messages.</p>
 <p>Use this plugin if you want to get rid of pending notifications
@@ -92,6 +95,19 @@ Automatically logs all major Steam events.
 **Example**  
 ```js
 bot.use(vapor.plugins.essentials);
+```
+<a name="module_fs"></a>
+## fs
+Provides file system handler for all Vapor file operations.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.fs);
 ```
 <a name="module_offline-messages"></a>
 ## offline-messages

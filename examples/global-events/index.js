@@ -26,6 +26,7 @@ bot.init(config);
 // Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
+bot.use(vapor.plugins.fs);
 
 // Create dummy plugin which will re-emit all chat messages as 'debug' events
 // This is simply for demonstration purposes
@@ -49,14 +50,33 @@ bot.use({
 
 // This plugin will intercept all 'debug' events emitted by
 // any emitter and log them
-// e.g. events by 'node-steam' or 'custom-emitter'
+// e.g. events by 'client' (node-steam) or 'custom-emitter' (defined above)
 bot.use({
-    name: 'global-events',
+    name: 'event-receiver-one',
     plugin: function(VaporAPI) {
         var log = VaporAPI.getLogger();
 
         VaporAPI.registerHandler({
                 emitter: '*',
+                event: 'debug'
+            },
+            function() {
+                log.debug(Array.prototype.join.call(arguments, ', '));
+            }
+        );
+    }
+});
+
+// This plugin will intercept all 'debug' events emitted by any plugin
+// e.g. events 'custom-emitter' (defined above)
+bot.use({
+    name: 'event-receiver-two',
+    plugin: function(VaporAPI) {
+        var log = VaporAPI.getLogger();
+
+        VaporAPI.registerHandler({
+                emitter: 'plugin',
+                plugin: '*',
                 event: 'debug'
             },
             function() {
