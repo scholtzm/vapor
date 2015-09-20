@@ -20,6 +20,7 @@ bot.init(config);
 // Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
+bot.use(vapor.plugins.fs);
 
 // Create custom 'emitter' plugin
 bot.use({

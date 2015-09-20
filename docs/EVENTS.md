@@ -25,6 +25,7 @@ Cookies provided by Steam's `ISteamUserAuth/AuthenticateUser/v1` web API method.
 * `error` - An `Error` object.
 
 This event is emitted when we get disconnected either by Steam servers going down or because of a login error.
+Not handling this event will result in Vapor crashing.
 
 Error properties:
 * `eresult` - Value corresponding to Steam's EResult enum.
@@ -36,7 +37,10 @@ Error properties:
 * `callback` - A callback function.
   * `data` - Data received from the read operation.
 
-*There's also a built-in plugin.*
+Emitted whenever Vapor needs to read a file, e.g. SteamGuard sentry file.
+This event allows you to implement your own file storage - file system, database, etc.
+
+*There's also a built-in plugin which handles this event using file system.*
 
 ### ready
 
@@ -51,5 +55,11 @@ After you retrieve the auth code, call `callback` with the auth code as the only
 *There's also a built-in plugin which will read this code from standard input.*
 
 ### writeFile
+* `key` - File identifier.
+* `data` - Data to be persisted.
+* `callback` - Optional callback function to be called after the data is persisted.
 
-*There's also a built-in plugin.*
+Emitted whenever Vapor needs to persist a file, e.g. SteamGuard sentry file.
+This event allows you to implement your own file storage - file system, database, etc.
+
+*There's also a built-in plugin which handles this event using file system.*

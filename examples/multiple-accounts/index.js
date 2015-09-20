@@ -27,7 +27,8 @@ var chainLoader = {
     name: 'chain-loader',
     plugin: function(VaporAPI) {
         var log = VaporAPI.getLogger();
-        var bot = VaporAPI.data.bot;
+        // The bot instance will be passed into `Vapor.use` method.
+        var bot = VaporAPI.data;
 
         VaporAPI.registerHandler({
                 emitter: 'vapor',
@@ -52,12 +53,15 @@ bot2.init(config2);
 // Use essential built-in plugins
 bot1.use(vapor.plugins.essentials);
 bot1.use(vapor.plugins.stdinSteamGuard);
+bot1.use(vapor.plugins.fs, './data1');
 
 bot2.use(vapor.plugins.essentials);
 bot2.use(vapor.plugins.stdinSteamGuard);
+bot2.use(vapor.plugins.fs, './data2');
 
 // Use our chain loader plugin
-bot1.use(chainLoader, {bot: bot2});
+// We pass in `bot2` as data argument
+bot1.use(chainLoader, bot2);
 
 // Start the chain
 bot1.connect();

@@ -17,7 +17,7 @@
 <dd><p>Automatically logs all major Steam events.</p>
 </dd>
 <dt><a href="#module_fs">fs</a></dt>
-<dd><p>Provides file system handler for all Vapor file operations.</p>
+<dd><p>Provides very simple file system handler for all Vapor file operations.</p>
 </dd>
 <dt><a href="#module_offline-messages">offline-messages</a></dt>
 <dd><p>Automatically removes and logs all pending chat messages.</p>
@@ -98,7 +98,7 @@ bot.use(vapor.plugins.essentials);
 ```
 <a name="module_fs"></a>
 ## fs
-Provides file system handler for all Vapor file operations.
+Provides very simple file system handler for all Vapor file operations.
 
 
 | Param | Type | Description |
@@ -107,7 +107,11 @@ Provides file system handler for all Vapor file operations.
 
 **Example**  
 ```js
+// use the default folder './data'
 bot.use(vapor.plugins.fs);
+
+// use our own data folder
+bot.use(vapor.plugins.fs, './myDataFolder');
 ```
 <a name="module_offline-messages"></a>
 ## offline-messages

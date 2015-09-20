@@ -23,6 +23,7 @@ bot.init(config);
 // Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
+bot.use(vapor.plugins.fs);
 
 // Use external plugin
 bot.use(storehouse);

@@ -14,12 +14,21 @@ var config = {
 // Create bot instance
 var bot = vapor();
 
+// 'fs' plugins saves the server list as './data/servers.json'
+// We can try to use this file if it's available
+try {
+    bot.servers = require('./data/servers.json');
+} catch(error) {
+    // The file probably doesn't exist OR wrong format
+}
+
 // Initialize bot with our config
 bot.init(config);
 
 // Use essential built-in plugins
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
+bot.use(vapor.plugins.fs);
 
 // Use our custom 'hello-world' plugin
 // We will use the provided VaporAPI argument
