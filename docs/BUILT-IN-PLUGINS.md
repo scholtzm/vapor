@@ -1,5 +1,13 @@
 ## Modules
 <dl>
+<dt><a href="#module_auto-reconnect">auto-reconnect</a></dt>
+<dd><p>Automatically reconnects to Steam network if:</p>
+<ul>
+<li>we get disconnected</li>
+<li>we receive <code>ServiceUnavailable</code> or <code>TryAnotherCM</code> after logging in</li>
+</ul>
+<p>Any other case is ignored.</p>
+</dd>
 <dt><a href="#module_decline-friend-requests">decline-friend-requests</a></dt>
 <dd><p>Automatically declines all friend requests except for admins.</p>
 <p>Use this plugin if you don&#39;t want to deal with friends list.</p>
@@ -29,18 +37,32 @@ emitted either by Vapor or plugin:</p>
 <p>Use this plugin if you want to get rid of pending notifications
 related to offline messages.</p>
 </dd>
-<dt><a href="#module_reconnect-on-error">reconnect-on-error</a></dt>
-<dd><p>Automatically reconnects to Steam network if:</p>
-<ul>
-<li>we get disconnected</li>
-<li>we receive <code>ServiceUnavailable</code> or <code>TryAnotherCM</code> after logging in</li>
-</ul>
-<p>Any other case is ignored.</p>
-</dd>
 <dt><a href="#module_stdin-steamguard">stdin-steamguard</a></dt>
 <dd><p>Reads SteamGuard auth code from the standard input.</p>
 </dd>
 </dl>
+<a name="module_auto-reconnect"></a>
+## auto-reconnect
+Automatically reconnects to Steam network if:
+
+* we get disconnected
+* we receive `ServiceUnavailable` or `TryAnotherCM` after logging in
+
+Any other case is ignored.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+// use default reconnect timeout of 5000ms (5 seconds)
+bot.use(vapor.plugins.autoReconnect);
+
+// supply our own timeout value of 3000ms (3 seconds)
+bot.use(vapor.plugins.autoReconnect, 3000);
+```
 <a name="module_decline-friend-requests"></a>
 ## decline-friend-requests
 Automatically declines all friend requests except for admins.
@@ -136,28 +158,6 @@ related to offline messages.
 **Example**  
 ```js
 bot.use(vapor.plugins.offlineMessages);
-```
-<a name="module_reconnect-on-error"></a>
-## reconnect-on-error
-Automatically reconnects to Steam network if:
-
-* we get disconnected
-* we receive `ServiceUnavailable` or `TryAnotherCM` after logging in
-
-Any other case is ignored.
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| VaporAPI | <code>Object</code> | Instance of the API class. |
-
-**Example**  
-```js
-// use default reconnect timeout of 5000ms (5 seconds)
-bot.use(vapor.plugins.reconnectOnError);
-
-// supply our own timeout value of 3000ms (3 seconds)
-bot.use(vapor.plugins.reconnectOnError, 3000);
 ```
 <a name="module_stdin-steamguard"></a>
 ## stdin-steamguard
