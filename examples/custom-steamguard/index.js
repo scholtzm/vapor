@@ -17,7 +17,8 @@ var bot = vapor();
 // Initialize bot with our config
 bot.init(config);
 
-// Use essentials
+// Use couple built-in plugins
+bot.use(vapor.plugins.consoleLogger);
 bot.use(vapor.plugins.essentials);
 
 // We want to use our custom code to retrieve SteamGuard code

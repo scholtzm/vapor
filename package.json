@@ -14,8 +14,7 @@
     "moment": "^2.10.6",
     "steam": "^1.1.0",
     "steam-crypto": "0.0.1",
-    "steam-groups": "^2.0.0",
-    "winston": "^1.0.1"
+    "steam-groups": "^2.0.0"
   },
   "repository": {
     "type": "git",

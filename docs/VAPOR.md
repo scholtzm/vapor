@@ -36,13 +36,6 @@ Config properties:
 * `displayName` - this is the name everyone else sees
 * `state` - initial online state
 * `admins` - array of SteamID64 strings
-* `logs` - settings used by the logger
-* `logs.dateFormat` - date format used by the logger
-* `logs.consoleLevel` - logger level used in the console
-* `logs.fileLevel` - logger level used in the file
-* `logs.prefix` - messages are prefixed with bot's username
-
-Possible values for `consoleLevel` and `fileLevel`: `verbose`, `debug`, `info`, `warn`, `error` and `none`.
 
 Only `username` and `password` are required. See 'misc.js' for defaults.
 
@@ -59,13 +52,7 @@ var config = {
     password: 'myPassword',
     displayName: 'Vapor Bot',
     state: 'Online',
-    admins: [ '7656123456', '7656987654' ],
-    logs: {
-        dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'info',
-        fileLevel: 'debug',
-        prefix: false
-    }
+    admins: [ '7656123456', '7656987654' ]
 };
 bot.init(config);
 ```

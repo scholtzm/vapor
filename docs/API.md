@@ -29,7 +29,6 @@
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.hasHandler(options)](#API+hasHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
-  * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
@@ -136,7 +135,7 @@ API.registerHandler({
     },
     function(user, message, type) {
         if(type === Steam.EChatEntryType.ChatMsg) {
-            log.info(user + " says: " + message);
+            console.log(user + " says: " + message);
         }
     }
 );
@@ -148,7 +147,7 @@ API.registerHandler({
         event: 'myCustomPluginEvent'
     },
     function(someString, someObject) {
-        log.info(someString, someObject);
+        console.log(someString, someObject);
     }
 );
 
@@ -158,7 +157,7 @@ API.registerHandler({
         event: 'debug'
     },
     function() {
-        log.debug(arguments);
+        console.log(arguments);
     }
 );
 ```
@@ -194,27 +193,6 @@ Allows plugin to remove all handlers for a specific event.
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 
-<a name="API+getLogger"></a>
-### apI.getLogger() ⇒ <code>Object</code>
-Returns wrapped logger instance prefixed with plugin's name.
-
-Available levels:
-* log.verbose
-* log.debug
-* log.info
-* log.warn
-* log.error
-
-**Kind**: instance method of <code>[API](#API)</code>  
-**Returns**: <code>Object</code> - Logger.  
-**Example**  
-```js
-var log = VaporAPI.getLogger();
-
-log.info('This is a regular info message...');
-log.warn('...and this is a warning message.');
-log.debug('String %s works too!', 'formatting');
-```
 <a name="API+webLogOn"></a>
 ### apI.webLogOn()
 Calls Vapor's internal webLogOn method.
@@ -341,9 +319,6 @@ Converts 64 bit SteamID string to account ID.
 <a name="Utils+getTimestamp"></a>
 ### utils.getTimestamp(unixTimestamp, format) ⇒ <code>string</code>
 Converts unix timestamp into formatted timestamp.
-
-The timestamp format is taken from Vapor's logs configuration
-if not provided.
 
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>string</code> - Formatted timestamp.  

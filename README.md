@@ -49,7 +49,6 @@ Plugins are self-contained code snippets which extend Vapor's behaviour.
 Plugins have:
 - access to active Steam client instance and handlers
 - access to Steam's enums
-- access to logger
 
 They can:
 - emit custom events

@@ -19,13 +19,14 @@ var bot = vapor();
 try {
     bot.servers = require('./data/servers.json');
 } catch(error) {
-    // The file probably doesn't exist OR wrong format
+    // The file probably doesn't exist or cannot be parsed
 }
 
 // Initialize bot with our config
 bot.init(config);
 
 // Use essential built-in plugins
+bot.use(vapor.plugins.consoleLogger);
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
 bot.use(vapor.plugins.fs);

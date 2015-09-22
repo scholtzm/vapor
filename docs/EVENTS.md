@@ -49,7 +49,32 @@ VaporAPI.registerHandler({
 );
 ```
 
-*Built-in-plugin available:* [auto-reconnect](BUILT-IN-PLUGINS.md#module_auto-reconnect)
+### message:*
+* `messageText` - Message. *Duh!*
+
+*Concrete event types:*
+* `message:debug` - Used for debug messages.
+* `message:info` - Used for info messages.
+* `message:warn` - Used for warning messages.
+* `message:error` - Used for error messages.
+
+These events allow you to implement custom logging plugin.
+
+*Example:*
+
+```js
+// Log all info messages to console
+VaporAPI.registerHandler({
+        emitter: '*',
+        event: 'message:info'
+    },
+    function(messageText) {
+        console.log(messageText);
+    }
+);
+```
+
+*Built-in-plugin available:* [console-logger](BUILT-IN-PLUGINS.md#module_console-logger)
 
 ### readFile
 * `fileName` - File identifier.

@@ -8,6 +8,9 @@
 </ul>
 <p>Any other case is ignored.</p>
 </dd>
+<dt><a href="#module_console-logger">console-logger</a></dt>
+<dd><p>Provides simple console logger for <code>message</code> events emitted by any emitter.</p>
+</dd>
 <dt><a href="#module_decline-friend-requests">decline-friend-requests</a></dt>
 <dd><p>Automatically declines all friend requests except for admins.</p>
 <p>Use this plugin if you don&#39;t want to deal with friends list.</p>
@@ -28,8 +31,8 @@
 <dd><p>Provides very simple file system handler for the following events
 emitted either by Vapor or plugin:</p>
 <ul>
-<li><code>readFile</code> -&gt; fileName, callback(error, data)</li>
-<li><code>writeFile</code> -&gt; fileName, data, callback(error)</li>
+<li><code>readFile</code> -&gt; <code>fileName</code>, <code>callback(error, data)</code></li>
+<li><code>writeFile</code> -&gt; <code>fileName</code>, <code>data</code>, <code>callback(error)</code></li>
 </ul>
 </dd>
 <dt><a href="#module_offline-messages">offline-messages</a></dt>
@@ -62,6 +65,19 @@ bot.use(vapor.plugins.autoReconnect);
 
 // supply our own timeout value of 3000ms (3 seconds)
 bot.use(vapor.plugins.autoReconnect, 3000);
+```
+<a name="module_console-logger"></a>
+## console-logger
+Provides simple console logger for `message` events emitted by any emitter.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.consoleLogger);
 ```
 <a name="module_decline-friend-requests"></a>
 ## decline-friend-requests
@@ -127,8 +143,8 @@ bot.use(vapor.plugins.essentials);
 ## fs
 Provides very simple file system handler for the following events
 emitted either by Vapor or plugin:
-* `readFile` -> fileName, callback(error, data)
-* `writeFile` -> fileName, data, callback(error)
+* `readFile` -> `fileName`, `callback(error, data)`
+* `writeFile` -> `fileName`, `data`, `callback(error)`
 
 
 | Param | Type | Description |

@@ -76,7 +76,7 @@ describe('Utils class tests', function () {
     });
 
     it('gives me correctly formatted unix timestamp', function(done) {
-        var result1 = utils.getTimestamp(0);
+        var result1 = utils.getTimestamp(0, 'YYYY-MM-DD HH:mm:ss');
         var result2 = utils.getTimestamp(0, 'DD.MM.YYYY HH:mm:ss');
 
         expect(result1).to.be.equal('1970-01-01 00:00:00');
