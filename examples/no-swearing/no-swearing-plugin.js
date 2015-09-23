@@ -14,7 +14,7 @@ exports.plugin = function(VaporAPI) {
 
     var steamFriends = VaporAPI.getHandler('steamFriends');
     var Steam = VaporAPI.getSteam();
-    var config = (VaporAPI.data && VaporAPI.data.config) ? VaporAPI.data.config : {};
+    var config = VaporAPI.data || {};
     var log = VaporAPI.getLogger();
     var utils = VaporAPI.getUtils();
 

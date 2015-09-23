@@ -3,7 +3,6 @@
 This example shows the possibility of running multiple Vapor instances.
 
 Couple interesting things to notice:
-* log messages are prefixed with bot's username - see config
 * bots start in chain - this way, we can still easily enter the SteamGuard code for each bot
 * chain loading uses the vapor `ready` event
 

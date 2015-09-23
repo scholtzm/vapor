@@ -18,6 +18,7 @@ var bot = vapor();
 bot.init(config);
 
 // Use essential built-in plugins
+// Logger is loaded first for obvious reasons
 bot.use(vapor.plugins.consoleLogger);
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);

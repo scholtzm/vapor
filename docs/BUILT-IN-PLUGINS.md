@@ -3,13 +3,16 @@
 <dt><a href="#module_auto-reconnect">auto-reconnect</a></dt>
 <dd><p>Automatically reconnects to Steam network if:</p>
 <ul>
-<li>we get disconnected</li>
+<li>we get disconnected (eresult <code>NoConnection</code>)</li>
 <li>we receive <code>ServiceUnavailable</code> or <code>TryAnotherCM</code> after logging in</li>
 </ul>
 <p>Any other case is ignored.</p>
 </dd>
 <dt><a href="#module_console-logger">console-logger</a></dt>
-<dd><p>Provides simple console logger for <code>message</code> events emitted by any emitter.</p>
+<dd><p>Provides simple console logger for <code>message:*</code> events emitted by any emitter.</p>
+</dd>
+<dt><a href="#module_debugger">debugger</a></dt>
+<dd><p>Logs all <code>debug</code> events emitted by any emitter to console.</p>
 </dd>
 <dt><a href="#module_decline-friend-requests">decline-friend-requests</a></dt>
 <dd><p>Automatically declines all friend requests except for admins.</p>
@@ -25,7 +28,7 @@
 <p><strong>Remark:</strong> This plugin does not decline trade offers.</p>
 </dd>
 <dt><a href="#module_essentials">essentials</a></dt>
-<dd><p>Automatically logs all major Steam events.</p>
+<dd><p>Automatically emits &#39;message:info&#39; events for all major Steam events.</p>
 </dd>
 <dt><a href="#module_fs">fs</a></dt>
 <dd><p>Provides very simple file system handler for the following events
@@ -36,7 +39,8 @@ emitted either by Vapor or plugin:</p>
 </ul>
 </dd>
 <dt><a href="#module_offline-messages">offline-messages</a></dt>
-<dd><p>Automatically removes and logs all pending chat messages.</p>
+<dd><p>Automatically removes and emits &#39;message:info&#39; events
+for all pending chat messages.</p>
 <p>Use this plugin if you want to get rid of pending notifications
 related to offline messages.</p>
 </dd>
@@ -48,7 +52,7 @@ related to offline messages.</p>
 ## auto-reconnect
 Automatically reconnects to Steam network if:
 
-* we get disconnected
+* we get disconnected (eresult `NoConnection`)
 * we receive `ServiceUnavailable` or `TryAnotherCM` after logging in
 
 Any other case is ignored.
@@ -68,7 +72,7 @@ bot.use(vapor.plugins.autoReconnect, 3000);
 ```
 <a name="module_console-logger"></a>
 ## console-logger
-Provides simple console logger for `message` events emitted by any emitter.
+Provides simple console logger for `message:*` events emitted by any emitter.
 
 
 | Param | Type | Description |
@@ -78,6 +82,19 @@ Provides simple console logger for `message` events emitted by any emitter.
 **Example**  
 ```js
 bot.use(vapor.plugins.consoleLogger);
+```
+<a name="module_debugger"></a>
+## debugger
+Logs all `debug` events emitted by any emitter to console.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.debugger);
 ```
 <a name="module_decline-friend-requests"></a>
 ## decline-friend-requests
@@ -128,7 +145,7 @@ bot.use(vapor.plugins.declineTradeRequests);
 ```
 <a name="module_essentials"></a>
 ## essentials
-Automatically logs all major Steam events.
+Automatically emits 'message:info' events for all major Steam events.
 
 
 | Param | Type | Description |
@@ -161,7 +178,8 @@ bot.use(vapor.plugins.fs, './myDataFolder');
 ```
 <a name="module_offline-messages"></a>
 ## offline-messages
-Automatically removes and logs all pending chat messages.
+Automatically removes and emits 'message:info' events
+for all pending chat messages.
 
 Use this plugin if you want to get rid of pending notifications
 related to offline messages.

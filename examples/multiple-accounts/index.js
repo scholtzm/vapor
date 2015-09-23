@@ -11,15 +11,13 @@ var password2 = process.env.VAPOR_PASS2;
 var config1 = {
     username: username1,
     password: password1,
-    displayName: 'Vapor Example - Instance 1',
-    logs: {prefix: true}
+    displayName: 'Vapor Example - Instance 1'
 };
 
 var config2 = {
     username: username2,
     password: password2,
-    displayName: 'Vapor Example - Instance 2',
-    logs: {prefix: true}
+    displayName: 'Vapor Example - Instance 2'
 };
 
 // This plugin allows our bots to start in chain

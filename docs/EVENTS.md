@@ -58,7 +58,9 @@ VaporAPI.registerHandler({
 * `message:warn` - Used for warning messages.
 * `message:error` - Used for error messages.
 
-These events allow you to implement custom logging plugin.
+Vapor does lots of stuff automatically. To let you know about different events being handled, Vapor will emit `message:*` events.
+
+All Vapor built-in plugins adhere to this convention and they also emit these events when necessary.
 
 *Example:*
 
@@ -66,6 +68,7 @@ These events allow you to implement custom logging plugin.
 // Log all info messages to console
 VaporAPI.registerHandler({
         emitter: '*',
+        // Same for debug, warn and error
         event: 'message:info'
     },
     function(messageText) {

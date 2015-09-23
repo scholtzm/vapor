@@ -8,13 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
     username: username,
     password: password,
-    displayName: 'Vapor Example - Global Events',
-    logs: {
-        // Make sure debug level is enabled since
-        // that's what we use for logging in this example
-        consoleLevel: 'debug',
-        fileLevel: 'debug'
-    }
+    displayName: 'Vapor Example - Global Events'
 };
 
 // Create bot instance
@@ -24,6 +18,7 @@ var bot = vapor();
 bot.init(config);
 
 // Use essential built-in plugins
+// Logger is loaded first for obvious reasons
 bot.use(vapor.plugins.consoleLogger);
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
@@ -50,19 +45,17 @@ bot.use({
 });
 
 // This plugin will intercept all 'debug' events emitted by
-// any emitter and log them
+// any emitter and re-emits them as messages
 // e.g. events by 'client' (node-steam) or 'custom-emitter' (defined above)
 bot.use({
     name: 'event-receiver-one',
     plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
-
         VaporAPI.registerHandler({
                 emitter: '*',
                 event: 'debug'
             },
             function() {
-                log.debug(Array.prototype.join.call(arguments, ', '));
+                VaporAPI.emitEvent('message:info', Array.prototype.join.call(arguments, ', '));
             }
         );
     }
@@ -73,15 +66,13 @@ bot.use({
 bot.use({
     name: 'event-receiver-two',
     plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
-
         VaporAPI.registerHandler({
                 emitter: 'plugin',
                 plugin: '*',
                 event: 'debug'
             },
             function() {
-                log.debug(Array.prototype.join.call(arguments, ', '));
+                VaporAPI.emitEvent('message:info', Array.prototype.join.call(arguments, ', '));
             }
         );
     }

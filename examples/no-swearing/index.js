@@ -21,17 +21,18 @@ var bot = vapor();
 bot.init(config);
 
 // Use essential built-in plugins
+// Logger is loaded first for obvious reasons
 bot.use(vapor.plugins.consoleLogger);
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
 bot.use(vapor.plugins.fs);
 
 // Use external plugin
-// We optionally pass in data object which has property named config
-bot.use(noSwearing, {config: {
+// We optionally pass in data object
+bot.use(noSwearing, {
     words: ['cow', 'pig', 'rat'], // ... etc., you get the idea.
     action: 'warning'
-}});
+});
 
 // Start the bot
 bot.connect();

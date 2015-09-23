@@ -25,6 +25,10 @@ var bot = vapor();
 // Initialize bot with our config
 bot.init(config);
 
+// Use console-logger so there's actually some output
+// We load this plugin as soon as possible so it can start logging ASAP
+bot.use(vapor.plugins.consoleLogger);
+
 // Use built-in plugin to easily enter SteamGuard code
 bot.use(vapor.plugins.stdinSteamGuard);
 
