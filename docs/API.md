@@ -69,7 +69,7 @@ Returns active Steam handler used by Vapor.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| handler | <code>string</code> | Can be either `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator` or `steamGroups`. |
+| handler | <code>string</code> | Can be either `steamUser`, `steamFriends`, `steamTrading` or `steamGroups`. |
 
 <a name="API+getUtils"></a>
 ### apI.getUtils() ⇒ <code>[Utils](#Utils)</code>
@@ -121,7 +121,7 @@ Also see [emitEvent](#API+emitEvent).
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `plugin` or `*` (which stands for 'any'). |
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 | callback | <code>function</code> | Callback function. |
@@ -170,7 +170,7 @@ Returns true if there is at least one handler for the given event, false otherwi
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `plugin` or `*` (which stands for 'any'). |
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 
@@ -189,7 +189,7 @@ Allows plugin to remove all handlers for a specific event.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Options object. |
-| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `steamGameCoordinator`, `plugin` or `*` (which stands for 'any'). |
+| options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `plugin` or `*` (which stands for 'any'). |
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 
