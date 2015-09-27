@@ -43,7 +43,7 @@ VaporAPI.registerHandler({
     function(error) {
         if(error.eresult === Steam.EResult.NoConnection) {
             // Reconnect in 5 seconds
-            setTimeout(VaporAPI.connect, 5000);
+            setTimeout(function() { VaporAPI.connect(); }, 5000);
         }
     }
 );
