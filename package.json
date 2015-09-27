@@ -35,7 +35,6 @@
     "all": "npm test && npm run lint && npm run docs"
   },
   "engines": {
-    "node": ">= 0.12.0",
-    "iojs": ">= 1.0.0"
+    "node": ">=4.1.1"
   }
 }

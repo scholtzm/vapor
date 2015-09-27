@@ -27,7 +27,7 @@ bot.connect();
 
 ## About
 
-Vapor is a lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in or providing console and file logger and exposes simple API which allows custom plugins to extend its behaviour.
+Vapor is a lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in and exposes simple API which allows custom plugins to extend its behaviour.
 
 ## Client
 
