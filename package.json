@@ -9,10 +9,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bytebuffer": "^4.0.0",
+    "bytebuffer": "^4.1.0",
     "extend": "^3.0.0",
     "moment": "^2.10.6",
-    "steam": "^1.1.0",
+    "steam": "^1.2.0",
     "steam-crypto": "0.0.1",
     "steam-groups": "^2.0.0"
   },
@@ -21,9 +21,9 @@
     "url": "https://github.com/scholtzm/vapor.git"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
-    "jsdoc-to-markdown": "^1.1.1",
-    "mocha": "^2.3.2"
+    "chai": "^3.3.0",
+    "jsdoc-to-markdown": "^1.2.0",
+    "mocha": "^2.3.3"
   },
   "scripts": {
     "vapor-docs": "jsdoc2md lib/vapor.js > docs/VAPOR.md",
