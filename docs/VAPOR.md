@@ -37,7 +37,7 @@ Config properties:
 * `state` - initial online state
 * `admins` - array of SteamID64 strings
 
-Only `username` and `password` are required. See 'misc.js' for defaults.
+Only `username` and `password` are required. See 'helper.js' for defaults.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
