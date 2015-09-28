@@ -10,13 +10,7 @@ var config = {
     password: password,
     displayName: 'Vapor Example - Basic',
     state: 'Online',
-    admins: [],
-    logs: {
-        dateFormat: 'YYYY-MM-DD HH:mm:ss',
-        consoleLevel: 'debug',
-        fileLevel: 'debug',
-        prefix: false
-    }
+    admins: []
 };
 
 // Create bot instance
