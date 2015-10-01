@@ -16,6 +16,7 @@ var bot = vapor();
 
 // 'fs' plugins saves the server list as './data/servers.json'
 // We can try to use this file if it's available
+// This property needs to be set before calling 'init'
 try {
     bot.servers = require('./data/servers.json');
 } catch(error) {

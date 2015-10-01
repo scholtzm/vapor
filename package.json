@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bytebuffer": "^4.1.0",
     "extend": "^3.0.0",
+    "long": "^2.3.0",
     "moment": "^2.10.6",
     "steam": "^1.2.0",
     "steam-crypto": "0.0.1",
