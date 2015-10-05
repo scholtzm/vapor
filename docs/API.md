@@ -29,6 +29,7 @@
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.hasHandler(options)](#API+hasHandler)
   * [.removeAllHandlers(options)](#API+removeAllHandlers)
+  * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
   * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
@@ -193,6 +194,26 @@ Allows plugin to remove all handlers for a specific event.
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
 
+<a name="API+getLogger"></a>
+### apI.getLogger() ⇒ <code>Object</code>
+Returns wrapper for emitting 'message:*' events prefixed with plugin's name.
+
+Available levels:
+* log.debug
+* log.info
+* log.warn
+* log.error
+
+**Kind**: instance method of <code>[API](#API)</code>  
+**Returns**: <code>Object</code> - Logger.  
+**Example**  
+```js
+var log = VaporAPI.getLogger();
+
+log.info('This is a regular info message...');
+log.warn('...and this is a warning message.');
+log.debug('String %s works too!', 'formatting');
+```
 <a name="API+webLogOn"></a>
 ### apI.webLogOn()
 Calls Vapor's internal webLogOn method.

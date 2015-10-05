@@ -1,5 +1,9 @@
 ## Modules
 <dl>
+<dt><a href="#module_account-flags">account-flags</a></dt>
+<dd><p>Prints account flags to console after successfully logging in.</p>
+<p>This plugin is mostly useful for debugging and development.</p>
+</dd>
 <dt><a href="#module_auto-reconnect">auto-reconnect</a></dt>
 <dd><p>Automatically reconnects to Steam network if:</p>
 <ul>
@@ -48,6 +52,21 @@ related to offline messages.</p>
 <dd><p>Reads SteamGuard auth code from the standard input.</p>
 </dd>
 </dl>
+<a name="module_account-flags"></a>
+## account-flags
+Prints account flags to console after successfully logging in.
+
+This plugin is mostly useful for debugging and development.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.accountFlags);
+```
 <a name="module_auto-reconnect"></a>
 ## auto-reconnect
 Automatically reconnects to Steam network if:
