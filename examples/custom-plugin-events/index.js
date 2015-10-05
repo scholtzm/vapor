@@ -47,7 +47,6 @@ bot.use({
 bot.use({
     name: 'myResponder',
     plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
         var utils = VaporAPI.getUtils();
         var Steam = VaporAPI.getSteam();
 
@@ -57,9 +56,9 @@ bot.use({
                 event: 'upperCasedFriendMessage'
             },
             function(user, message, type) {
-                log.info('Received message from "myEmitter": %s', message);
-                log.info('This message was originally sent by: %s', user);
-                log.info('The message type is: %s', utils.enumToString(type, Steam.EChatEntryType));
+                VaporAPI.emitEvent('message:info', 'Received message from "myEmitter": ' + message);
+                VaporAPI.emitEvent('message:info', 'This message was originally sent by: ' + user);
+                VaporAPI.emitEvent('message:info', 'The message type is: ' + utils.enumToString(type, Steam.EChatEntryType));
             }
         );
     }

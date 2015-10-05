@@ -24,7 +24,6 @@ var config2 = {
 var chainLoader = {
     name: 'chain-loader',
     plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
         // The bot instance will be passed into `Vapor.use` method.
         var bot = VaporAPI.data;
 
@@ -33,7 +32,7 @@ var chainLoader = {
                 event: 'ready'
             },
             function() {
-                log.info('Starting another bot instance.');
+                VaporAPI.emitEvent('message:info', 'Starting another bot instance.');
                 bot.connect();
             }
         );
