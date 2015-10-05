@@ -50,12 +50,14 @@ bot.use({
 bot.use({
     name: 'event-receiver-one',
     plugin: function(VaporAPI) {
+        var log = VaporAPI.getLogger();
+
         VaporAPI.registerHandler({
                 emitter: '*',
                 event: 'debug'
             },
             function() {
-                VaporAPI.emitEvent('message:info', Array.prototype.join.call(arguments, ', '));
+                log.info(Array.prototype.join.call(arguments, ', '));
             }
         );
     }
@@ -66,13 +68,15 @@ bot.use({
 bot.use({
     name: 'event-receiver-two',
     plugin: function(VaporAPI) {
+        var log = VaporAPI.getLogger();
+
         VaporAPI.registerHandler({
                 emitter: 'plugin',
                 plugin: '*',
                 event: 'debug'
             },
             function() {
-                VaporAPI.emitEvent('message:info', Array.prototype.join.call(arguments, ', '));
+                log.info(Array.prototype.join.call(arguments, ', '));
             }
         );
     }

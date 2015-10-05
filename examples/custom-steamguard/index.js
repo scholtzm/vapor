@@ -25,6 +25,7 @@ bot.use(vapor.plugins.essentials);
 bot.use({
     name: 'custom-steamguard',
     plugin: function(VaporAPI) {
+        var log = VaporAPI.getLogger();
 
         // Register handler for `steamGuard` event
         VaporAPI.registerHandler({
@@ -37,7 +38,7 @@ bot.use({
                 // Once you have the auth code, call the callback
                 // In this example, I use a static code
                 var code = '12345';
-                VaporAPI.emitEvent('message:info', 'Providing SteamGuard code ' + code);
+                log.info('Providing SteamGuard code %s.', code);
 
                 // We will get disconnected after this call as expected
                 // `error` event will be emitted afterwards
@@ -52,7 +53,7 @@ bot.use({
                 event: 'disconnected'
             },
             function(error) {
-                VaporAPI.emitEvent('message:info', 'Vapor `disconnected` event caught: ' + error.message);
+                log.error('Vapor error caught: %s', error.message);
             }
         );
 

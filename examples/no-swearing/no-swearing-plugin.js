@@ -15,6 +15,7 @@ exports.plugin = function(VaporAPI) {
     var steamFriends = VaporAPI.getHandler('steamFriends');
     var Steam = VaporAPI.getSteam();
     var config = VaporAPI.data || {};
+    var log = VaporAPI.getLogger();
     var utils = VaporAPI.getUtils();
 
     var words = config.words || [];
@@ -36,9 +37,9 @@ exports.plugin = function(VaporAPI) {
                         steamFriends.sendMessage(user, 'Please, do not use swear words.');
                     } else if(action === 'kick') {
                         steamFriends.removeFriend(user);
-                        VaporAPI.emitEvent('message:warn', 'User with SteamID ' + user + ' was removed for swearing.');
+                        log.warn('User with SteamID %s was removed for swearing.', user);
                     } else {
-                        VaporAPI.emitEvent('message:error', 'Unknown action: ' + action);
+                        log.error('Unknown action: %s', action);
                     }
                 }
 
