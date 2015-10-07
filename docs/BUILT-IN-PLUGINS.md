@@ -1,7 +1,7 @@
 ## Modules
 <dl>
 <dt><a href="#module_account-flags">account-flags</a></dt>
-<dd><p>Prints account flags to console after successfully logging in.</p>
+<dd><p>Logs account flags to console after successfully logging in.</p>
 <p>This plugin is mostly useful for debugging and development.</p>
 </dd>
 <dt><a href="#module_auto-reconnect">auto-reconnect</a></dt>
@@ -54,7 +54,7 @@ related to offline messages.</p>
 </dl>
 <a name="module_account-flags"></a>
 ## account-flags
-Prints account flags to console after successfully logging in.
+Logs account flags to console after successfully logging in.
 
 This plugin is mostly useful for debugging and development.
 
@@ -189,11 +189,11 @@ emitted either by Vapor or plugin:
 
 **Example**  
 ```js
-// use the default folder './data'
+// use the default folder 'data'
 bot.use(vapor.plugins.fs);
 
 // use our own data folder
-bot.use(vapor.plugins.fs, './myDataFolder');
+bot.use(vapor.plugins.fs, 'myDataFolder');
 ```
 <a name="module_offline-messages"></a>
 ## offline-messages
