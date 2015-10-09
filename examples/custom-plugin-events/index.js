@@ -20,9 +20,14 @@ bot.init(config);
 // Use essential built-in plugins
 // Logger is loaded first for obvious reasons
 bot.use(vapor.plugins.consoleLogger);
+
+// We load fs plugin right afterwards
+// Some plugins may require `readFile` and `writeFile`
+// event handler while loading
+bot.use(vapor.plugins.fs);
+
 bot.use(vapor.plugins.essentials);
 bot.use(vapor.plugins.stdinSteamGuard);
-bot.use(vapor.plugins.fs);
 
 // Create custom 'emitter' plugin
 bot.use({

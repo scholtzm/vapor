@@ -50,14 +50,14 @@ bot2.init(config2);
 
 // Use essential built-in plugins
 bot1.use(vapor.plugins.consoleLogger);
+bot1.use(vapor.plugins.fs, './data1');
 bot1.use(vapor.plugins.essentials);
 bot1.use(vapor.plugins.stdinSteamGuard);
-bot1.use(vapor.plugins.fs, './data1');
 
 bot2.use(vapor.plugins.consoleLogger);
+bot2.use(vapor.plugins.fs, './data2');
 bot2.use(vapor.plugins.essentials);
 bot2.use(vapor.plugins.stdinSteamGuard);
-bot2.use(vapor.plugins.fs, './data2');
 
 // Use our chain loader plugin
 // We pass in `bot2` as data argument

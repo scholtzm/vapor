@@ -7,5 +7,6 @@
   "validateIndentation": 4,
   "validateQuoteMarks": "'",
 
-  "disallowEmptyBlocks": true
+  "disallowEmptyBlocks": true,
+  "disallowMultipleSpaces": true
 }

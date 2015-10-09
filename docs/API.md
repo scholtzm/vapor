@@ -25,6 +25,7 @@
   * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
   * [.getSteam()](#API+getSteam) ⇒ <code>Steam</code>
   * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
+  * [.getPlugins()](#API+getPlugins) ⇒ <code>Array.&lt;string&gt;</code>
   * [.emitEvent(event, ...args)](#API+emitEvent)
   * [.registerHandler(options, callback)](#API+registerHandler)
   * [.hasHandler(options)](#API+hasHandler)
@@ -92,6 +93,12 @@ Returns Vapor config object.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Config object.  
+<a name="API+getPlugins"></a>
+### apI.getPlugins() ⇒ <code>Array.&lt;string&gt;</code>
+Returns array of names of loaded plugins.
+
+**Kind**: instance method of <code>[API](#API)</code>  
+**Returns**: <code>Array.&lt;string&gt;</code> - Array of plugin names.  
 <a name="API+emitEvent"></a>
 ### apI.emitEvent(event, ...args)
 Allows plugin to emit custom events via Vapor's event emitter.
@@ -170,7 +177,7 @@ Returns true if there is at least one handler for the given event, false otherwi
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | <code>Object</code> | Options object. |
+| options | <code>Object</code> &#124; <code>string</code> | Options object or event name. |
 | options.emitter | <code>string</code> | Can be either `vapor`, `client`, `steamUser`, `steamFriends`, `steamTrading`, `plugin` or `*` (which stands for 'any'). |
 | options.plugin | <code>string</code> | If emitter is `plugin`, this is plugin's name. Use `*` for any. |
 | options.event | <code>string</code> | Event name. |
@@ -179,6 +186,10 @@ Returns true if there is at least one handler for the given event, false otherwi
 ```js
 if(API.hasHandler({emitter: 'steamFriends', event: 'friendMsg'})) {
     // do something ...
+}
+
+if(API.hasHandler('readFile')) {
+    // we can safely emit this event to read a file
 }
 ```
 <a name="API+removeAllHandlers"></a>
@@ -348,4 +359,3 @@ Converts unix timestamp into formatted timestamp.
 | --- | --- | --- |
 | unixTimestamp | <code>number</code> | Unix timestamp. |
 | format | <code>string</code> | Timestamp format. |
-
