@@ -3,8 +3,9 @@
   "excludeFiles": ["node_modules/**"],
 
   "requireParenthesesAroundIIFE": true,
+  "requireSpaceAfterComma": true,
   "validateLineBreaks": "LF",
-  "validateIndentation": 4,
+  "validateIndentation": 2,
   "validateQuoteMarks": "'",
 
   "disallowEmptyBlocks": true,

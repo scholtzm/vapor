@@ -8,10 +8,10 @@ var admin = process.env.VAPOR_ADMIN;
 
 // Create our config object
 var config = {
-    username: username,
-    password: password,
-    displayName: 'Vapor Example - Storehouse',
-    admins: [ admin ]
+  username: username,
+  password: password,
+  displayName: 'Vapor Example - Storehouse',
+  admins: [ admin ]
 };
 
 // Create bot instance
@@ -40,6 +40,6 @@ bot.connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot.disconnect();
-    setTimeout(process.exit, 1000, 0);
+  bot.disconnect();
+  setTimeout(process.exit, 1000, 0);
 });

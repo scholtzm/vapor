@@ -6,9 +6,9 @@ var password = process.env.VAPOR_PASS;
 
 // Create our config object
 var config = {
-    username: username,
-    password: password,
-    displayName: 'Vapor Example - Global Events'
+  username: username,
+  password: password,
+  displayName: 'Vapor Example - Global Events'
 };
 
 // Create bot instance
@@ -32,59 +32,53 @@ bot.use(vapor.plugins.stdinSteamGuard);
 // Create dummy plugin which will re-emit all chat messages as 'debug' events
 // This is simply for demonstration purposes
 bot.use({
-    name: 'custom-emitter',
-    plugin: function(VaporAPI) {
-        var Steam = VaporAPI.getSteam();
+  name: 'custom-emitter',
+  plugin: function(VaporAPI) {
+    var Steam = VaporAPI.getSteam();
 
-        VaporAPI.registerHandler({
-                emitter: 'steamFriends',
-                event: 'friendMsg'
-            },
-            function(user, message, type) {
-                if(type === Steam.EChatEntryType.ChatMsg) {
-                    VaporAPI.emitEvent('debug', 'Received message from ' + user);
-                }
-            }
-        );
-    }
+    VaporAPI.registerHandler({
+      emitter: 'steamFriends',
+      event: 'friendMsg'
+    }, function(user, message, type) {
+      if(type === Steam.EChatEntryType.ChatMsg) {
+        VaporAPI.emitEvent('debug', 'Received message from ' + user);
+      }
+    });
+  }
 });
 
 // This plugin will intercept all 'debug' events emitted by
 // any emitter and re-emits them as messages
 // e.g. events by 'client' (node-steam) or 'custom-emitter' (defined above)
 bot.use({
-    name: 'event-receiver-one',
-    plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
+  name: 'event-receiver-one',
+  plugin: function(VaporAPI) {
+    var log = VaporAPI.getLogger();
 
-        VaporAPI.registerHandler({
-                emitter: '*',
-                event: 'debug'
-            },
-            function() {
-                log.info(Array.prototype.join.call(arguments, ', '));
-            }
-        );
-    }
+    VaporAPI.registerHandler({
+      emitter: '*',
+      event: 'debug'
+    }, function() {
+      log.info(Array.prototype.join.call(arguments, ', '));
+    });
+  }
 });
 
 // This plugin will intercept all 'debug' events emitted by any plugin
 // e.g. events 'custom-emitter' (defined above)
 bot.use({
-    name: 'event-receiver-two',
-    plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
+  name: 'event-receiver-two',
+  plugin: function(VaporAPI) {
+    var log = VaporAPI.getLogger();
 
-        VaporAPI.registerHandler({
-                emitter: 'plugin',
-                plugin: '*',
-                event: 'debug'
-            },
-            function() {
-                log.info(Array.prototype.join.call(arguments, ', '));
-            }
-        );
-    }
+    VaporAPI.registerHandler({
+      emitter: 'plugin',
+      plugin: '*',
+      event: 'debug'
+    }, function() {
+      log.info(Array.prototype.join.call(arguments, ', '));
+    });
+  }
 });
 
 // Start the bot
@@ -92,6 +86,6 @@ bot.connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot.disconnect();
-    setTimeout(process.exit, 1000, 0);
+  bot.disconnect();
+  setTimeout(process.exit, 1000, 0);
 });

@@ -6,11 +6,11 @@ var password = process.env.VAPOR_PASS;
 
 // Create our config object
 var config = {
-    username: username,
-    password: password,
-    displayName: 'Vapor Example - Basic',
-    state: 'Online',
-    admins: []
+  username: username,
+  password: password,
+  displayName: 'Vapor Example - Basic',
+  state: 'Online',
+  admins: []
 };
 
 // Create bot instance

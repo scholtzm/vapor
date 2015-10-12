@@ -9,35 +9,33 @@ var password2 = process.env.VAPOR_PASS2;
 
 // Create our config objects
 var config1 = {
-    username: username1,
-    password: password1,
-    displayName: 'Vapor Example - Instance 1'
+  username: username1,
+  password: password1,
+  displayName: 'Vapor Example - Instance 1'
 };
 
 var config2 = {
-    username: username2,
-    password: password2,
-    displayName: 'Vapor Example - Instance 2'
+  username: username2,
+  password: password2,
+  displayName: 'Vapor Example - Instance 2'
 };
 
 // This plugin allows our bots to start in chain
 var chainLoader = {
-    name: 'chain-loader',
-    plugin: function(VaporAPI) {
-        var log = VaporAPI.getLogger();
-        // The bot instance will be passed into `Vapor.use` method.
-        var bot = VaporAPI.data;
+  name: 'chain-loader',
+  plugin: function(VaporAPI) {
+    var log = VaporAPI.getLogger();
+    // The bot instance will be passed into `Vapor.use` method.
+    var bot = VaporAPI.data;
 
-        VaporAPI.registerHandler({
-                emitter: 'vapor',
-                event: 'ready'
-            },
-            function() {
-                log.info('Starting another bot instance.');
-                bot.connect();
-            }
-        );
-    }
+    VaporAPI.registerHandler({
+      emitter: 'vapor',
+      event: 'ready'
+    }, function() {
+      log.info('Starting another bot instance.');
+      bot.connect();
+    });
+  }
 };
 
 // Create bot instances
@@ -68,7 +66,7 @@ bot1.connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot1.disconnect();
-    bot2.disconnect();
-    setTimeout(process.exit, 1000, 0);
+  bot1.disconnect();
+  bot2.disconnect();
+  setTimeout(process.exit, 1000, 0);
 });

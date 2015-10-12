@@ -8,10 +8,10 @@ var admin = process.env.VAPOR_ADMIN;
 
 // Create our config object
 var config = {
-    username: username,
-    password: password,
-    displayName: 'Vapor Example - No Swearing',
-    admins: [ admin ]
+  username: username,
+  password: password,
+  displayName: 'Vapor Example - No Swearing',
+  admins: [ admin ]
 };
 
 // Create bot instance
@@ -35,8 +35,8 @@ bot.use(vapor.plugins.stdinSteamGuard);
 // Use external plugin
 // We optionally pass in data object
 bot.use(noSwearing, {
-    words: ['cow', 'pig', 'rat'], // ... etc., you get the idea.
-    action: 'warning'
+  words: ['cow', 'pig', 'rat'], // ... etc., you get the idea.
+  action: 'warning'
 });
 
 // Start the bot
@@ -44,6 +44,6 @@ bot.connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot.disconnect();
-    setTimeout(process.exit, 1000, 0);
+  bot.disconnect();
+  setTimeout(process.exit, 1000, 0);
 });

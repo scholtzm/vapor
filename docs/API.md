@@ -359,3 +359,4 @@ Converts unix timestamp into formatted timestamp.
 | --- | --- | --- |
 | unixTimestamp | <code>number</code> | Unix timestamp. |
 | format | <code>string</code> | Timestamp format. |
+

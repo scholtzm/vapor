@@ -6,9 +6,9 @@ var password = process.env.VAPOR_PASS;
 
 // Create our config object
 var config = {
-    username: username,
-    password: password,
-    displayName: 'Vapor Example - Hello World'
+  username: username,
+  password: password,
+  displayName: 'Vapor Example - Hello World'
 };
 
 // Create bot instance
@@ -18,9 +18,9 @@ var bot = vapor();
 // We can try to use this file if it's available
 // This property needs to be set before calling 'init'
 try {
-    bot.servers = require('./data/servers.json');
+  bot.servers = require('./data/servers.json');
 } catch(error) {
-    // The file probably doesn't exist or cannot be parsed
+  // The file probably doesn't exist or cannot be parsed
 }
 
 // Initialize bot with our config
@@ -42,22 +42,20 @@ bot.use(vapor.plugins.stdinSteamGuard);
 // We will use the provided VaporAPI argument
 // It's not recommended to access Vapor instance directly
 bot.use({
-    name: 'hello-world',
-    plugin: function(VaporAPI) {
-        var Steam = VaporAPI.getSteam();
-        var steamFriends = VaporAPI.getHandler('steamFriends');
+  name: 'hello-world',
+  plugin: function(VaporAPI) {
+    var Steam = VaporAPI.getSteam();
+    var steamFriends = VaporAPI.getHandler('steamFriends');
 
-        VaporAPI.registerHandler({
-                emitter: 'steamFriends',
-                event: 'friendMsg'
-            },
-            function(user, message, type) {
-                if(type === Steam.EChatEntryType.ChatMsg) {
-                    steamFriends.sendMessage(user, 'Hello World!');
-                }
-            }
-        );
-    }
+    VaporAPI.registerHandler({
+      emitter: 'steamFriends',
+      event: 'friendMsg'
+    }, function(user, message, type) {
+      if(type === Steam.EChatEntryType.ChatMsg) {
+        steamFriends.sendMessage(user, 'Hello World!');
+      }
+    });
+  }
 });
 
 // Start the bot
@@ -65,6 +63,6 @@ bot.connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {
-    bot.disconnect();
-    setTimeout(process.exit, 1000, 0);
+  bot.disconnect();
+  setTimeout(process.exit, 1000, 0);
 });
