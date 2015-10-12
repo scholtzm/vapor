@@ -1,13 +1,36 @@
-[![NPM version](http://img.shields.io/npm/v/vapor.svg?style=flat)](https://www.npmjs.org/package/vapor)
-[![Build Status](https://travis-ci.org/scholtzm/vapor.svg?branch=master)](https://travis-ci.org/scholtzm/vapor)
-[![Dependency Status](https://david-dm.org/scholtzm/vapor.svg)](https://david-dm.org/scholtzm/vapor)
-[![devDependency Status](https://david-dm.org/scholtzm/vapor/dev-status.svg)](https://david-dm.org/scholtzm/vapor#info=devDependencies)
+<p align="center">
+  <a href="http://github.com/flyjs">
+    <img width=280px src="https://cloud.githubusercontent.com/assets/2640934/10439290/2a3aede4-7139-11e5-88c3-5ceed9b80a0f.png">
+  </a>
+  <br>
+  <i>"Lightweight <a href="http://store.steampowered.com/about/">Steam</a> client framework for node.js"</i>
+</p>
 
-# Vapor
+---
 
-> Lightweight [Steam](http://store.steampowered.com/about/) client framework for node.js.
+<p align="center">
+  <a href="https://www.npmjs.org/package/vapor">
+    <img src="http://img.shields.io/npm/v/vapor.svg?style=flat" alt="NPM version">
+  </a>
 
-![vapor](https://cloud.githubusercontent.com/assets/2640934/9032860/1cf00bb8-39c3-11e5-82a0-efe2807c8f62.png)
+  <a href="https://travis-ci.org/scholtzm/vapor">
+    <img src="https://travis-ci.org/scholtzm/vapor.svg?branch=master" alt="Build Status">
+  </a>
+
+  <a href="https://david-dm.org/scholtzm/vapor">
+    <img src="https://david-dm.org/scholtzm/vapor.svg" alt="Dependency Status">
+  </a>
+
+  <a href="https://david-dm.org/scholtzm/vapor#info=devDependencies">
+    <img src="https://david-dm.org/scholtzm/vapor/dev-status.svg" alt="devDependency Status">
+  </a>
+</p>
+
+---
+
+## About
+
+Vapor is a lightweight Steam client framework for [node.js](https://github.com/nodejs/node) which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in and exposes simple API which allows custom plugins to extend its behaviour.
 
 ## Install
 
@@ -24,10 +47,6 @@ var bot = vapor();
 bot.init({username: 'myUsername', password: 'myPassword'});
 bot.connect();
 ```
-
-## About
-
-Vapor is a lightweight Steam client framework for node.js which provides unified API for writing custom extensions. Vapor takes care of the basic stuff such as maintaining connection, logging in and exposes simple API which allows custom plugins to extend its behaviour.
 
 ## Client
 
