@@ -17,7 +17,7 @@
 
 
 * [API](#API)
-  * [new API(Vapor, pluginName, data)](#new_API_new)
+  * [new API(vapor, pluginName, data)](#new_API_new)
   * [.connect()](#API+connect)
   * [.disconnect()](#API+disconnect)
   * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
@@ -34,7 +34,7 @@
   * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
-### new API(Vapor, pluginName, data)
+### new API(vapor, pluginName, data)
 API class constructor.
 
 Instance of this class is passed to plugins exported function as the only argument.
@@ -42,7 +42,7 @@ Instance of this class is passed to plugins exported function as the only argume
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Vapor | <code>Vapor</code> | Vapor instance. |
+| vapor | <code>Vapor</code> | Vapor instance. |
 | pluginName | <code>string</code> | Specific plugin name which uses this API instance. |
 | data | <code>Object</code> | Data object that is passed to API instance. |
 

@@ -24,6 +24,10 @@
   <a href="https://david-dm.org/scholtzm/vapor#info=devDependencies">
     <img src="https://david-dm.org/scholtzm/vapor/dev-status.svg" alt="devDependency Status">
   </a>
+
+  <a href="https://gitter.im/scholtzm/vapor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter">
+  </a>
 </p>
 
 ---
