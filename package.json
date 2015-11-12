@@ -21,7 +21,7 @@
     "url": "https://github.com/scholtzm/vapor.git"
   },
   "devDependencies": {
-    "chai": "^3.4.0",
+    "chai": "^3.4.1",
     "jsdoc-to-markdown": "^1.2.0",
     "mocha": "^2.3.3"
   },

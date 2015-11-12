@@ -293,7 +293,7 @@ Format allows placeholders:
 
 <a name="Utils+stringToEnum"></a>
 ### utils.stringToEnum(string, enumList) ⇒ <code>number</code>
-Returns first enum value that matches the given string.
+Returns first enum value that contains the given string.
 
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>number</code> - Enum value or null if not found.  
