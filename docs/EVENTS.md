@@ -14,13 +14,11 @@ Cookies provided by Steam's `ISteamUserAuth/AuthenticateUser/v1` web API method.
 
 ```js
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'cookies'
-    },
-    function(cookies, sessionid) {
-        // Do something with cookies and sessionid
-    }
-);
+  emitter: 'vapor',
+  event: 'cookies'
+}, function(cookies, sessionid) {
+  // Do something with cookies and sessionid
+});
 ```
 
 ### disconnected
@@ -37,16 +35,14 @@ Error properties:
 var Steam = VaporAPI.getSteam();
 
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'disconnected'
-    },
-    function(error) {
-        if(error.eresult === Steam.EResult.NoConnection) {
-            // Reconnect in 5 seconds
-            setTimeout(function() { VaporAPI.connect(); }, 5000);
-        }
-    }
-);
+  emitter: 'vapor',
+  event: 'disconnected'
+}, function(error) {
+  if(error.eresult === Steam.EResult.NoConnection) {
+    // Reconnect in 5 seconds
+    setTimeout(function() { VaporAPI.connect(); }, 5000);
+  }
+});
 ```
 
 ### message:*
@@ -67,14 +63,12 @@ All Vapor built-in plugins adhere to this convention and they also emit these ev
 ```js
 // Log all info messages to console
 VaporAPI.registerHandler({
-        emitter: '*',
-        // Same for debug, warn and error
-        event: 'message:info'
-    },
-    function(messageText) {
-        console.log(messageText);
-    }
-);
+  emitter: '*',
+  // Same for debug, warn and error
+  event: 'message:info'
+}, function(messageText) {
+  console.log(messageText);
+});
 ```
 
 *Built-in-plugin available:* [console-logger](BUILT-IN-PLUGINS.md#module_console-logger)
@@ -92,15 +86,13 @@ This event allows you to implement your own storage - file system, database, etc
 
 ```js
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'readFile'
-    },
-    function(fileName, callback) {
-        // This is probably the most simple
-        // 'readFile' handler one can make
-        require('fs').readFile(filename, callback);
-    }
-);
+  emitter: 'vapor',
+  event: 'readFile'
+}, function(fileName, callback) {
+  // This is probably the most simple
+  // 'readFile' handler one can make
+  require('fs').readFile(filename, callback);
+});
 ```
 
 *Built-in-plugin available:* [fs](BUILT-IN-PLUGINS.md#module_fs)
@@ -113,13 +105,11 @@ Vapor has completely logged into Steam network.
 
 ```js
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'ready'
-    },
-    function() {
-        // Do something
-    }
-);
+  emitter: 'vapor',
+  event: 'ready'
+}, function() {
+  // Do something
+});
 ```
 
 ### steamGuard
@@ -132,16 +122,14 @@ After you retrieve the auth code, call `callback` with the auth code as the only
 
 ```js
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'steamGuard'
-    },
-    function(callback) {
-        // 'getFromEmail' would be your custom function
-        // to retrieve the auth code automatically
-        var code = getFromEmail();
-        callback(code);
-    }
-);
+  emitter: 'vapor',
+  event: 'steamGuard'
+}, function(callback) {
+  // 'getFromEmail' would be your custom function
+  // to retrieve the auth code automatically
+  var code = getFromEmail();
+  callback(code);
+});
 ```
 
 *Built-in-plugin available:* [stdin-steamguard](BUILT-IN-PLUGINS.md#module_stdin-steamguard)
@@ -159,13 +147,11 @@ This event allows you to implement your own storage - file system, database, etc
 
 ```js
 VaporAPI.registerHandler({
-        emitter: 'vapor',
-        event: 'writeFile'
-    },
-    function(fileName, data, callback) {
-        require('fs').writeFile(filename, data, callback);
-    }
-);
+  emitter: 'vapor',
+  event: 'writeFile'
+}, function(fileName, data, callback) {
+  require('fs').writeFile(filename, data, callback);
+});
 ```
 
 *Built-in-plugin available:* [fs](BUILT-IN-PLUGINS.md#module_fs)
