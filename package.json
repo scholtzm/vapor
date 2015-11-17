@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "jsdoc-to-markdown": "^1.2.0",
-    "mocha": "^2.3.3"
+    "jsdoc-to-markdown": "^1.2.1",
+    "mocha": "^2.3.4"
   },
   "scripts": {
     "vapor-docs": "jsdoc2md lib/vapor.js > docs/VAPOR.md",

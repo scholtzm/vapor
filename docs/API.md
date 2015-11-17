@@ -138,36 +138,30 @@ Also see [emitEvent](#API+emitEvent).
 ```js
 // Listen to 'friendMsg' event emitted by 'steamFriends'
 API.registerHandler({
-        emitter: 'steamFriends',
-        event: 'friendMsg'
-    },
-    function(user, message, type) {
-        if(type === Steam.EChatEntryType.ChatMsg) {
-            console.log(user + " says: " + message);
-        }
-    }
-);
+  emitter: 'steamFriends',
+  event: 'friendMsg'
+}, function(user, message, type) {
+  if(type === Steam.EChatEntryType.ChatMsg) {
+    onsole.log(user + " says: " + message);
+  }
+});
 
 // Listen to another plugin's custom event
 API.registerHandler({
-        emitter: 'plugin',
-        plugin: 'another-plugin-name'
-        event: 'myCustomPluginEvent'
-    },
-    function(someString, someObject) {
-        console.log(someString, someObject);
-    }
-);
+  emitter: 'plugin',
+  plugin: 'another-plugin-name'
+  event: 'myCustomPluginEvent'
+}, function(someString, someObject) {
+  console.log(someString, someObject);
+});
 
 // Listen to any 'debug' event
 API.registerHandler({
-        emitter: '*',
-        event: 'debug'
-    },
-    function() {
-        console.log(arguments);
-    }
-);
+  emitter: '*',
+  event: 'debug'
+}, function() {
+  console.log(arguments);
+});
 ```
 <a name="API+hasHandler"></a>
 ### apI.hasHandler(options)
@@ -185,11 +179,11 @@ Returns true if there is at least one handler for the given event, false otherwi
 **Example**  
 ```js
 if(API.hasHandler({emitter: 'steamFriends', event: 'friendMsg'})) {
-    // do something ...
+  // do something ...
 }
 
 if(API.hasHandler('readFile')) {
-    // we can safely emit this event to read a file
+  // we can safely emit this event to read a file
 }
 ```
 <a name="API+removeAllHandlers"></a>

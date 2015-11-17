@@ -48,11 +48,11 @@ Only `username` and `password` are required. See 'helper.js' for defaults.
 **Example**  
 ```js
 var config = {
-    username: 'myUsername',
-    password: 'myPassword',
-    displayName: 'Vapor Bot',
-    state: 'Online',
-    admins: [ '7656123456', '7656987654' ]
+  username: 'myUsername',
+  password: 'myPassword',
+  displayName: 'Vapor Bot',
+  state: 'Online',
+  admins: [ '7656123456', '7656987654' ]
 };
 bot.init(config);
 ```
