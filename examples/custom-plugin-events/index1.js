@@ -8,7 +8,7 @@ var password = process.env.VAPOR_PASS;
 var config = {
   username: username,
   password: password,
-  displayName: 'Vapor Example - Custom Events'
+  displayName: 'Vapor Example - Custom Events 1'
 };
 
 // Create bot instance
