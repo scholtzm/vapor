@@ -1,7 +1,4 @@
 language: node_js
 node_js:
   - '4'
-before_script:
-  - npm install -g jscs
-  - npm install -g jshint
 script: npm run lint && npm test

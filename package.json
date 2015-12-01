@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "eslint": "^1.10.2",
     "jsdoc-to-markdown": "^1.2.1",
     "mocha": "^2.3.4"
   },
@@ -30,7 +31,7 @@
     "api-docs": "jsdoc2md lib/api.js lib/utils.js > docs/API.md",
     "plugin-docs": "jsdoc2md lib/plugins/*.js > docs/BUILT-IN-PLUGINS.md",
     "test": "TZ=Europe/London mocha spec",
-    "lint": "jshint --exclude-path=./.gitignore . && jscs .",
+    "lint": "eslint .",
     "docs": "npm run vapor-docs && npm run api-docs && npm run plugin-docs",
     "all": "npm test && npm run lint && npm run docs"
   },
