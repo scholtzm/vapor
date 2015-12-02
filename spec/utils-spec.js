@@ -1,6 +1,3 @@
-/* global describe, it */
-/* jshint expr:true */
-
 var Steam = require('steam');
 var VaporMock = require('./vapormock.js');
 var expect = require('chai').expect;
@@ -9,7 +6,7 @@ var Utils = require('../lib/utils.js');
 
 var utils = new Utils(VaporMock);
 
-describe('Utils class tests', function () {
+describe('Utils class', function () {
 
   it('identifies vapor admin', function(done) {
     var result_true = utils.isAdmin('7656');

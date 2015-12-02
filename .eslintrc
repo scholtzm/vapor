@@ -1,6 +1,7 @@
 {
   "env": {
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "rules": {
     "indent": [2, 2, {"SwitchCase": 1}],
@@ -15,6 +16,7 @@
     "semi": [2, "always"],
     "wrap-iife": [2, "inside"],
     "linebreak-style": 2,
-    "comma-spacing": [2, {"before": false, "after": true}]
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "no-spaced-func": 2
   }
 }
