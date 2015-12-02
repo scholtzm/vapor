@@ -47,7 +47,7 @@ describe('Vapor class', function () {
     return done();
   });
 
-  it('init and use functions are chainable', function(done) {
+  it('init and use methods are chainable', function(done) {
     var client = vapor();
 
     client

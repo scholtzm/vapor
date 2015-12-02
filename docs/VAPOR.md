@@ -30,6 +30,8 @@ var bot = vapor();
 ### vapor.init(config)
 Initializes Vapor instance.
 
+This method is chainable.
+
 Config properties:
 * `username` - username used for logging in
 * `password` - password used for logging in
@@ -58,9 +60,11 @@ bot.init(config);
 ```
 <a name="Vapor+use"></a>
 ### vapor.use(plugin, data)
-Use plugin.
+Use Vapor plugin.
 
 You can either specify a built-in plugin or use a custom plugin.
+
+This method is chainable.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 

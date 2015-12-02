@@ -23,43 +23,45 @@ try {
   // The file probably doesn't exist or cannot be parsed
 }
 
+// 'init' and 'use' methods are chainable
+bot
 // Initialize bot with our config
-bot.init(config);
+  .init(config)
 
 // Use essential built-in plugins
 // Logger is loaded first for obvious reasons
-bot.use(vapor.plugins.consoleLogger);
+  .use(vapor.plugins.consoleLogger)
 
 // We load fs plugin right afterwards
 // Some plugins may require `readFile` and `writeFile`
 // event handler while loading
-bot.use(vapor.plugins.fs);
+  .use(vapor.plugins.fs)
 
-bot.use(vapor.plugins.essentials);
-bot.use(vapor.plugins.stdinSteamGuard);
+  .use(vapor.plugins.essentials)
+  .use(vapor.plugins.stdinSteamGuard)
 
 // Use our custom 'hello-world' plugin
 // We will use the provided VaporAPI argument
 // It's not recommended to access Vapor instance directly
-bot.use({
-  name: 'hello-world',
-  plugin: function(VaporAPI) {
-    var Steam = VaporAPI.getSteam();
-    var steamFriends = VaporAPI.getHandler('steamFriends');
+  .use({
+    name: 'hello-world',
+    plugin: function(VaporAPI) {
+      var Steam = VaporAPI.getSteam();
+      var steamFriends = VaporAPI.getHandler('steamFriends');
 
-    VaporAPI.registerHandler({
-      emitter: 'steamFriends',
-      event: 'friendMsg'
-    }, function(user, message, type) {
-      if(type === Steam.EChatEntryType.ChatMsg) {
-        steamFriends.sendMessage(user, 'Hello World!');
-      }
-    });
-  }
-});
+      VaporAPI.registerHandler({
+        emitter: 'steamFriends',
+        event: 'friendMsg'
+      }, function(user, message, type) {
+        if(type === Steam.EChatEntryType.ChatMsg) {
+          steamFriends.sendMessage(user, 'Hello World!');
+        }
+      });
+    }
+  })
 
 // Start the bot
-bot.connect();
+  .connect();
 
 // Handle SIGINT (Ctrl+C) gracefully
 process.on('SIGINT', function() {

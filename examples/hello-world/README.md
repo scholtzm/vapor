@@ -4,7 +4,9 @@
 
 This is pretty much the simplest plugin one can make.
 
-Notice that this example shows how you can set the `servers` property to use up-to-date list of Steam servers.
+This example shows:
+* that you can set the `servers` property to use up-to-date list of Steam servers
+* that `init` and `use` methods can also be chained
 
 ### Usage
 
