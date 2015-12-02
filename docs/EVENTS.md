@@ -45,6 +45,22 @@ VaporAPI.registerHandler({
 });
 ```
 
+### loginKey
+* `loginKey` - String containing your login key.
+
+You can use this login key for subsequent logins in place of password.
+
+*Example:*
+
+```js
+VaporAPI.registerHandler({
+  emitter: 'vapor',
+  event: 'loginKey'
+}, function(loginKey) {
+  // Save the login key somewhere
+});
+```
+
 ### message:*
 * `messageText` - Message. *Duh!*
 

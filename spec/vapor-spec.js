@@ -19,10 +19,12 @@ describe('Vapor class', function () {
     var fn1 = function() { client.init(); };
     var fn2 = function() { client.init({username: 'a'}); };
     var fn3 = function() { client.init({username: 'a', password: 'b'}); };
+    var fn4 = function() { client.init({username: 'a', loginKey: 'c'}); };
 
     expect(fn1).to.throw(/Config error/);
     expect(fn2).to.throw(/Config error/);
     expect(fn3).to.not.throw(/Config error/);
+    expect(fn4).to.not.throw(/Config error/);
 
     return done();
   });

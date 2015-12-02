@@ -35,6 +35,8 @@ This method is chainable.
 Config properties:
 * `username` - username used for logging in
 * `password` - password used for logging in
+* `loginKey` - can be used in place of password
+* `rememberPassword` - if `true`, `loginKey` event will be emitted
 * `displayName` - this is the name everyone else sees
 * `state` - initial online state
 * `admins` - array of SteamID64 strings
