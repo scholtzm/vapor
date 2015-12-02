@@ -29,6 +29,48 @@ describe('Vapor class', function () {
     return done();
   });
 
+  it('method init can be called multiple times', function(done) {
+    var client = vapor();
+
+    client
+      .init({username: 'a', password: 'b'})
+      .use({
+        name: 'j',
+        plugin: function(API) {
+          API.registerHandler({
+            emitter: 'vapor',
+            event: 'c'
+          }, function(){});
+        }
+      })
+      .use({name: 'k', plugin: function(){}})
+      .use({name: 'l', plugin: function(){}});
+
+    expect(client._loadedPlugins).to.be.length(3);
+    expect(client._client.listeners('connected').length).to.be.equal(1);
+    expect(client.listeners('c').length).to.be.equal(1);
+
+    client
+      .init({username: 'a', password: 'b'})
+      .use({
+        name: 'j',
+        plugin: function(API) {
+          API.registerHandler({
+            emitter: 'vapor',
+            event: 'c'
+          }, function(){});
+        }
+      })
+      .use({name: 'k', plugin: function(){}})
+      .use({name: 'l', plugin: function(){}});
+
+    expect(client._loadedPlugins).to.be.length(3);
+    expect(client._client.listeners('connected').length).to.be.equal(1);
+    expect(client.listeners('c').length).to.be.equal(1);
+
+    return done();
+  });
+
   it('method use works correctly', function(done) {
     var client = vapor();
 
