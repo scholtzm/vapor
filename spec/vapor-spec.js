@@ -47,4 +47,25 @@ describe('Vapor class', function () {
     return done();
   });
 
+  it('init and use functions are chainable', function(done) {
+    var client = vapor();
+
+    client
+      .init({username: 'a', password: 'b'})
+      .use({
+        name: 'plugin A',
+        plugin: function() {}
+      })
+      .use({
+        name: 'plugin B',
+        plugin: function() {}
+      });
+
+    expect(client).to.have.ownProperty('servers');
+    expect(client._loadedPlugins).to.have.length(2);
+    expect(client._loadedPlugins).to.be.deep.equal(['plugin A', 'plugin B']);
+
+    return done();
+  });
+
 });
