@@ -1,7 +1,10 @@
 /**
  * Vapor mock object used for testing
  */
+var BasicEmitter = require('./basic-emitter.js');
+
 module.exports = {
+  _client: new BasicEmitter(),
   _config: {
     admins: ['7656']
   },

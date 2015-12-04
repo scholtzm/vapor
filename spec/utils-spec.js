@@ -1,5 +1,5 @@
 var Steam = require('steam');
-var VaporMock = require('./vapormock.js');
+var VaporMock = require('./mocks/vapor-mock.js');
 var expect = require('chai').expect;
 
 var Utils = require('../lib/utils.js');

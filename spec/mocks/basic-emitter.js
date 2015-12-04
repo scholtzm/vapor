@@ -1,10 +1,10 @@
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 
-function Steam() {
+function BasicEmitter() {
   EventEmitter.call(this);
 }
 
-util.inherits(Steam, EventEmitter);
+util.inherits(BasicEmitter, EventEmitter);
 
-module.exports = Steam;
+module.exports = BasicEmitter;

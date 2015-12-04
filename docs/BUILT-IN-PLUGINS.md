@@ -12,6 +12,10 @@
 </ul>
 <p>Any other case is ignored.</p>
 </dd>
+<dt><a href="#module_auto-responder">auto-responder</a></dt>
+<dd><p>Automatically responds to any chat message with a predefined response.</p>
+<p>Response is required to load this plugin.</p>
+</dd>
 <dt><a href="#module_console-logger">console-logger</a></dt>
 <dd><p>Provides simple console logger for <code>message:*</code> events emitted by any emitter.</p>
 </dd>
@@ -88,6 +92,21 @@ bot.use(vapor.plugins.autoReconnect);
 
 // supply our own timeout value of 3000ms (3 seconds)
 bot.use(vapor.plugins.autoReconnect, 3000);
+```
+<a name="module_auto-responder"></a>
+## auto-responder
+Automatically responds to any chat message with a predefined response.
+
+Response is required to load this plugin.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.autoResponder, 'Response chat message.');
 ```
 <a name="module_console-logger"></a>
 ## console-logger
