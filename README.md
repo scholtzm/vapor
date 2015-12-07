@@ -56,12 +56,10 @@ bot.connect();
 
 Vapor provides a very simple automated client. This client uses [node-steam](https://github.com/seishun/node-steam) to connect to Steam servers.
 
-Vapor represents several key features:
-- easy to update and does not have to be modified by the user
+Vapor provides several key features:
 - handles log in process, including auth codes and sentry files
 - provides API for plugins
 - provides unified logging interface
-- makes it possible to run multiple bots using a single installation
 - provides a bunch of [built-in plugins](docs) to make your life easier
 
 Everything else needs to be programmed separately using plugin system.
@@ -81,7 +79,7 @@ They can:
 - store data
 - and more ...
 
-Using this pattern, there are no hard dependencies between two plugins. If a plugin listens to another plugins event, the plugin won't break even if the other plugin isn't available.
+Plugins are entirely event driven, there are no hard dependencies. Each plugin can emit an event and any plugin may register a callback for such event. This architecture allows your code to be modular and decoupled.
 
 ## More information
 
