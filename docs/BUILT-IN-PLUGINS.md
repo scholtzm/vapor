@@ -208,7 +208,7 @@ emitted either by Vapor or plugin:
 
 **Example**  
 ```js
-// use the default folder 'data'
+// use the default folder 'data-<username>'
 bot.use(vapor.plugins.fs);
 
 // use our own data folder
