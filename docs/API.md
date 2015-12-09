@@ -47,23 +47,23 @@ Instance of this class is passed to plugins exported function as the only argume
 | data | <code>Object</code> | Data object that is passed to API instance. |
 
 <a name="API+connect"></a>
-### apI.connect()
+### api.connect()
 Connect to Steam network.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="API+disconnect"></a>
-### apI.disconnect()
+### api.disconnect()
 Disconnect from Steam network.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="API+getClient"></a>
-### apI.getClient() ⇒ <code>SteamClient</code>
+### api.getClient() ⇒ <code>SteamClient</code>
 Returns active Steam client used by Vapor.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>SteamClient</code> - Active Steam client.  
 <a name="API+getHandler"></a>
-### apI.getHandler(handler) ⇒ <code>Object</code>
+### api.getHandler(handler) ⇒ <code>Object</code>
 Returns active Steam handler used by Vapor.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -74,13 +74,13 @@ Returns active Steam handler used by Vapor.
 | handler | <code>string</code> | Can be either `steamUser`, `steamFriends`, `steamTrading` or `steamGroups`. |
 
 <a name="API+getUtils"></a>
-### apI.getUtils() ⇒ <code>[Utils](#Utils)</code>
+### api.getUtils() ⇒ <code>[Utils](#Utils)</code>
 Returns instance of Utils class.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>[Utils](#Utils)</code> - Instantiated Utils class.  
 <a name="API+getSteam"></a>
-### apI.getSteam() ⇒ <code>Steam</code>
+### api.getSteam() ⇒ <code>Steam</code>
 Returns Steam object.
 
 This is especially useful for all the ESomething enums.
@@ -88,19 +88,19 @@ This is especially useful for all the ESomething enums.
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Steam</code> - Steam.  
 <a name="API+getConfig"></a>
-### apI.getConfig() ⇒ <code>Object</code>
+### api.getConfig() ⇒ <code>Object</code>
 Returns Vapor config object.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Config object.  
 <a name="API+getPlugins"></a>
-### apI.getPlugins() ⇒ <code>Array.&lt;string&gt;</code>
+### api.getPlugins() ⇒ <code>Array.&lt;string&gt;</code>
 Returns array of names of loaded plugins.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Array.&lt;string&gt;</code> - Array of plugin names.  
 <a name="API+emitEvent"></a>
-### apI.emitEvent(event, ...args)
+### api.emitEvent(event, ...args)
 Allows plugin to emit custom events via Vapor's event emitter.
 
 This function allows to pass multiple data arguments.
@@ -119,7 +119,7 @@ Also see [registerHandler](#API+registerHandler).
 API.emitEvent('myCustomPluginEvent', someString, someObject);
 ```
 <a name="API+registerHandler"></a>
-### apI.registerHandler(options, callback)
+### api.registerHandler(options, callback)
 Allows plugin to register custom handler for any event.
 
 Also see [emitEvent](#API+emitEvent).
@@ -164,7 +164,7 @@ API.registerHandler({
 });
 ```
 <a name="API+hasHandler"></a>
-### apI.hasHandler(options)
+### api.hasHandler(options)
 Returns true if there is at least one handler for the given event, false otherwise.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -187,7 +187,7 @@ if(API.hasHandler('readFile')) {
 }
 ```
 <a name="API+removeAllHandlers"></a>
-### apI.removeAllHandlers(options)
+### api.removeAllHandlers(options)
 Allows plugin to remove all handlers for a specific event.
 
 **Kind**: instance method of <code>[API](#API)</code>  
@@ -200,7 +200,7 @@ Allows plugin to remove all handlers for a specific event.
 | options.event | <code>string</code> | Event name. |
 
 <a name="API+getLogger"></a>
-### apI.getLogger() ⇒ <code>Object</code>
+### api.getLogger() ⇒ <code>Object</code>
 Returns wrapper for emitting 'message:*' events prefixed with plugin's name.
 
 Available levels:
@@ -220,7 +220,7 @@ log.warn('...and this is a warning message.');
 log.debug('String %s works too!', 'formatting');
 ```
 <a name="API+webLogOn"></a>
-### apI.webLogOn()
+### api.webLogOn()
 Calls Vapor's internal webLogOn method.
 
 Listen to `cookies` event to receive new array of cookies and sessionid.
