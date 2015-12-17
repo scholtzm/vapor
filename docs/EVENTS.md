@@ -132,6 +132,8 @@ VaporAPI.registerHandler({
 * `callback` - A callback function.
   * `code` - Should be your SteamGuard auth code.
 
+Use this event to supply correct SteamGuard auth code (e-mail or mobile 2FA).
+
 After you retrieve the auth code, call `callback` with the auth code as the only argument. Check out `custom-steamguard` example to see how this works.
 
 *Example:*
@@ -141,9 +143,8 @@ VaporAPI.registerHandler({
   emitter: 'vapor',
   event: 'steamGuard'
 }, function(callback) {
-  // 'getFromEmail' would be your custom function
-  // to retrieve the auth code automatically
-  var code = getFromEmail();
+  // 'generateAuthCode' would be your custom function
+  var code = generateAuthCode();
   callback(code);
 });
 ```

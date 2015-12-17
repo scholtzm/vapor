@@ -32,10 +32,9 @@ bot.use({
       emitter: 'vapor',
       event: 'steamGuard'
     }, function(callback) {
-      // You need to retrieve the auth code somehow from your e-mail account
-      // e.g. by using an IMAP module
-      // Once you have the auth code, call the callback
-      // In this example, I use a static code
+      // You are most likely using 2FA with you bot account
+      // In this case, you can just generate the code by using node-steam-totp or other module
+      // This example provides dummy code in purpose
       var code = '12345';
       log.info('Providing SteamGuard code %s.', code);
 
