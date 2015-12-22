@@ -239,7 +239,7 @@ by Vapor after successfully logging in.
 
 * [Utils](#Utils)
   * [new Utils(Vapor)](#new_Utils_new)
-  * [.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>
+  * ~~[.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>~~
   * [.getUserDescription(steamID, format)](#Utils+getUserDescription) ⇒ <code>string</code>
   * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
   * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
@@ -258,8 +258,13 @@ Instance of this class is available via [getUtils](#API+getUtils).
 | Vapor | <code>Object</code> | Vapor instance. |
 
 <a name="Utils+isAdmin"></a>
-### utils.isAdmin(steamID) ⇒ <code>Boolean</code>
+### ~~utils.isAdmin(steamID) ⇒ <code>Boolean</code>~~
+***Deprecated***
+
 Returns whether a user is admin or not.
+
+This method will be removed in the next major version.
+Use built-in plugin 'admins' instead.
 
 **Kind**: instance method of <code>[Utils](#Utils)</code>  
 **Returns**: <code>Boolean</code> - Result.  

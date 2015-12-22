@@ -4,6 +4,10 @@
 <dd><p>Logs account flags to console after successfully logging in.</p>
 <p>This plugin is mostly useful for debugging and development.</p>
 </dd>
+<dt><a href="#module_admins">admins</a></dt>
+<dd><p>Provides whitelist-like functionality for recognizing admin accounts.</p>
+<p>This plugin replaces built-in admins system.</p>
+</dd>
 <dt><a href="#module_auto-reconnect">auto-reconnect</a></dt>
 <dd><p>Automatically reconnects to Steam network if:</p>
 <ul>
@@ -52,6 +56,17 @@ for all pending chat messages.</p>
 <p>Use this plugin if you want to get rid of pending notifications
 related to offline messages.</p>
 </dd>
+<dt><a href="#module_presence">presence</a></dt>
+<dd><p>Sets display name and online state after logging in.</p>
+<p>This plugin accepts options object:</p>
+<ul>
+<li><code>displayName</code> (string) - display name that will be used</li>
+<li><code>state</code> (number|string) - online state that will be used;
+if string is provided, this plugin will use <code>utils.stringToEnum</code>
+to determine the enum value</li>
+</ul>
+<p>This plugin replaces init options &#39;displayName&#39; and &#39;state&#39;.</p>
+</dd>
 <dt><a href="#module_stdin-steamguard">stdin-steamguard</a></dt>
 <dd><p>Reads SteamGuard auth code from the standard input.</p>
 </dd>
@@ -70,6 +85,21 @@ This plugin is mostly useful for debugging and development.
 **Example**  
 ```js
 bot.use(vapor.plugins.accountFlags);
+```
+<a name="module_admins"></a>
+## admins
+Provides whitelist-like functionality for recognizing admin accounts.
+
+This plugin replaces built-in admins system.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.admins, ['7656123456789', '7656123789456']);
 ```
 <a name="module_auto-reconnect"></a>
 ## auto-reconnect
@@ -230,6 +260,37 @@ related to offline messages.
 **Example**  
 ```js
 bot.use(vapor.plugins.offlineMessages);
+```
+<a name="module_presence"></a>
+## presence
+Sets display name and online state after logging in.
+
+This plugin accepts options object:
+- `displayName` (string) - display name that will be used
+- `state` (number|string) - online state that will be used;
+if string is provided, this plugin will use `utils.stringToEnum`
+to determine the enum value
+
+This plugin replaces init options 'displayName' and 'state'.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| VaporAPI | <code>Object</code> | Instance of the API class. |
+
+**Example**  
+```js
+bot.use(vapor.plugins.presence, {
+	displayName: 'BananaBot', // optional
+	state: 'trade'            // optional
+});
+
+// or
+
+bot.use(vapor.plugins.presence, {
+	displayName: 'BananaBot',
+	state: 1                  // translates to 'Online'
+});
 ```
 <a name="module_stdin-steamguard"></a>
 ## stdin-steamguard
