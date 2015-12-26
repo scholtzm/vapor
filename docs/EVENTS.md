@@ -49,6 +49,7 @@ VaporAPI.registerHandler({
 * `loginKey` - String containing your login key.
 
 You can use this login key for subsequent logins in place of password.
+This event is **only** emitted if you set `rememberPassword` to `true` in `Vapor.init({...})`.
 
 *Example:*
 
