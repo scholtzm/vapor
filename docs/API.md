@@ -1,10 +1,12 @@
 ## Classes
+
 <dl>
 <dt><a href="#API">API</a></dt>
 <dd></dd>
 <dt><a href="#Utils">Utils</a></dt>
 <dd></dd>
 </dl>
+
 <a name="API"></a>
 ## API
 **Kind**: global class  
@@ -17,21 +19,21 @@
 
 
 * [API](#API)
-  * [new API(vapor, pluginName, data)](#new_API_new)
-  * [.connect()](#API+connect)
-  * [.disconnect()](#API+disconnect)
-  * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
-  * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
-  * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
-  * [.getSteam()](#API+getSteam) ⇒ <code>Steam</code>
-  * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
-  * [.getPlugins()](#API+getPlugins) ⇒ <code>Array.&lt;string&gt;</code>
-  * [.emitEvent(event, ...args)](#API+emitEvent)
-  * [.registerHandler(options, callback)](#API+registerHandler)
-  * [.hasHandler(options)](#API+hasHandler)
-  * [.removeAllHandlers(options)](#API+removeAllHandlers)
-  * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
-  * [.webLogOn()](#API+webLogOn)
+    * [new API(vapor, pluginName, data)](#new_API_new)
+    * [.connect()](#API+connect)
+    * [.disconnect()](#API+disconnect)
+    * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
+    * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
+    * [.getUtils()](#API+getUtils) ⇒ <code>[Utils](#Utils)</code>
+    * [.getSteam()](#API+getSteam) ⇒ <code>Steam</code>
+    * [.getConfig()](#API+getConfig) ⇒ <code>Object</code>
+    * [.getPlugins()](#API+getPlugins) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.emitEvent(event, ...args)](#API+emitEvent)
+    * [.registerHandler(options, callback)](#API+registerHandler)
+    * [.hasHandler(options)](#API+hasHandler)
+    * [.removeAllHandlers(options)](#API+removeAllHandlers)
+    * [.getLogger()](#API+getLogger) ⇒ <code>Object</code>
+    * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
 ### new API(vapor, pluginName, data)
@@ -238,14 +240,14 @@ by Vapor after successfully logging in.
 **Kind**: global class  
 
 * [Utils](#Utils)
-  * [new Utils(Vapor)](#new_Utils_new)
-  * ~~[.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>~~
-  * [.getUserDescription(steamID, format)](#Utils+getUserDescription) ⇒ <code>string</code>
-  * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
-  * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
-  * [.accountIDToSteamID(accountID)](#Utils+accountIDToSteamID) ⇒ <code>string</code>
-  * [.steamIDToAccountID(steamID)](#Utils+steamIDToAccountID) ⇒ <code>number</code>
-  * [.getTimestamp(unixTimestamp, format)](#Utils+getTimestamp) ⇒ <code>string</code>
+    * [new Utils(Vapor)](#new_Utils_new)
+    * ~~[.isAdmin(steamID)](#Utils+isAdmin) ⇒ <code>Boolean</code>~~
+    * [.getUserDescription(steamID, format)](#Utils+getUserDescription) ⇒ <code>string</code>
+    * [.stringToEnum(string, enumList)](#Utils+stringToEnum) ⇒ <code>number</code>
+    * [.enumToString(value, enumList)](#Utils+enumToString) ⇒ <code>string</code>
+    * [.accountIDToSteamID(accountID)](#Utils+accountIDToSteamID) ⇒ <code>string</code>
+    * [.steamIDToAccountID(steamID)](#Utils+steamIDToAccountID) ⇒ <code>number</code>
+    * [.getTimestamp(unixTimestamp, format)](#Utils+getTimestamp) ⇒ <code>string</code>
 
 <a name="new_Utils_new"></a>
 ### new Utils(Vapor)

@@ -1,4 +1,5 @@
 ## Modules
+
 <dl>
 <dt><a href="#module_account-flags">account-flags</a></dt>
 <dd><p>Logs account flags to console after successfully logging in.</p>
@@ -71,6 +72,7 @@ to determine the enum value</li>
 <dd><p>Reads SteamGuard auth code from the standard input.</p>
 </dd>
 </dl>
+
 <a name="module_account-flags"></a>
 ## account-flags
 Logs account flags to console after successfully logging in.

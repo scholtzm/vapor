@@ -9,11 +9,11 @@
 
 
 * [Vapor](#Vapor)
-  * [new Vapor()](#new_Vapor_new)
-  * [.init(config)](#Vapor+init)
-  * [.use(plugin, data)](#Vapor+use)
-  * [.connect()](#Vapor+connect)
-  * [.disconnect()](#Vapor+disconnect)
+    * [new Vapor()](#new_Vapor_new)
+    * [.init(config)](#Vapor+init)
+    * [.use(plugin, data)](#Vapor+use)
+    * [.connect()](#Vapor+connect)
+    * [.disconnect()](#Vapor+disconnect)
 
 <a name="new_Vapor_new"></a>
 ### new Vapor()
