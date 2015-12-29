@@ -102,6 +102,11 @@ This plugin replaces built-in admins system.
 **Example**  
 ```js
 bot.use(vapor.plugins.admins, ['7656123456789', '7656123789456']);
+
+// somewhere in your plugin
+API.emitEvent('isAdmin', '7656123456789', function(result) {
+  // result === true
+});
 ```
 <a name="module_auto-reconnect"></a>
 ## auto-reconnect
@@ -283,15 +288,15 @@ This plugin replaces init options 'displayName' and 'state'.
 **Example**  
 ```js
 bot.use(vapor.plugins.presence, {
-	displayName: 'BananaBot', // optional
-	state: 'trade'            // optional
+  displayName: 'BananaBot',
+  state: 'trade' // translates to 'Looking to Trade'
 });
 
 // or
 
 bot.use(vapor.plugins.presence, {
-	displayName: 'BananaBot',
-	state: 1                  // translates to 'Online'
+  displayName: 'BananaBot',
+  state: 1      // translates to 'Online'
 });
 ```
 <a name="module_stdin-steamguard"></a>
