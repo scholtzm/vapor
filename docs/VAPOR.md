@@ -35,13 +35,21 @@ This method is chainable.
 Config properties:
 * `username` - username used for logging in
 * `password` - password used for logging in
-* `loginKey` - can be used in place of password
+* `loginKey` - can be used in place of password, see `loginKey` event
 * `rememberPassword` - if `true`, `loginKey` event will be emitted
-* `displayName` - this is the name everyone else sees
-* `state` - initial online state
-* `admins` - array of SteamID64 strings
+* `logonID` - unique number that identifies this login, defaults to `0`
+  * Supplying different number for each Vapor client allows you to use the same
+  account with multiple Vapor instances. Internally, this property maps to
+  `obfustucated_private_ip` when logging in.
+* `displayName` [1] - this is the name everyone else sees
+* `state` [1] - initial online state
+* `admins` [2] - array of SteamID64 strings
 
-Only `username` and `password` are required. See 'helper.js' for defaults.
+
+* [1] *Deprecated:* use built-in plugin `presence`
+* [2] *Deprecated:* use built-in plugin `admins`
+
+Only `username` and `password`/`loginKey` are required. See 'helper.js' for defaults.
 
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
 
