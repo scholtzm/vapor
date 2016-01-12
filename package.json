@@ -1,6 +1,6 @@
 {
   "name": "vapor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Lightweight Steam client framework for node.js",
   "main": "index.js",
   "author": {
