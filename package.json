@@ -11,7 +11,7 @@
   "dependencies": {
     "extend": "^3.0.0",
     "long": "^3.0.3",
-    "moment": "^2.11.1",
+    "moment": "^2.11.2",
     "steam": "^1.4.0",
     "steam-crypto": "0.0.1",
     "steam-groups": "^2.0.0"
