@@ -144,7 +144,7 @@ API.registerHandler({
   event: 'friendMsg'
 }, function(user, message, type) {
   if(type === Steam.EChatEntryType.ChatMsg) {
-    onsole.log(user + " says: " + message);
+    console.log(user + " says: " + message);
   }
 });
 
@@ -157,9 +157,18 @@ API.registerHandler({
   console.log(someString, someObject);
 });
 
-// Listen to any 'debug' event
+// Listen to 'debug' event emitted by anything
 API.registerHandler({
   emitter: '*',
+  event: 'debug'
+}, function() {
+  console.log(arguments);
+});
+
+// Listen to 'debug' event emitted by any plugin
+API.registerHandler({
+  emitter: 'plugin',
+  plugin: '*',
   event: 'debug'
 }, function() {
   console.log(arguments);
