@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "eslint": "^2.1.0",
     "extend": "^3.0.0",
     "long": "^3.0.3",
     "moment": "^2.11.2",

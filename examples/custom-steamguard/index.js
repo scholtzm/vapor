@@ -34,12 +34,12 @@ bot.use({
     }, function(callback) {
       // You are most likely using 2FA with you bot account
       // In this case, you can just generate the code by using node-steam-totp or other module
-      // This example provides dummy code in purpose
+      // This example provides dummy code on purpose
       var code = '12345';
       log.info('Providing SteamGuard code %s.', code);
 
-      // We will get disconnected after this call as expected
-      // `error` event will be emitted afterwards
+      // We will get disconnected after this call and as a result
+      // `disconnected` event will be emitted afterwards
       callback(code);
     });
 
