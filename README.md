@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://github.com/flyjs">
+  <a href="https://github.com/scholtzm/vapor">
     <img width=280px src="https://cloud.githubusercontent.com/assets/2640934/10439290/2a3aede4-7139-11e5-88c3-5ceed9b80a0f.png">
   </a>
   <br>
