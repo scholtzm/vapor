@@ -12,7 +12,7 @@
     * [new Vapor()](#new_Vapor_new)
     * [.init(config)](#Vapor+init)
     * [.use(plugin, data)](#Vapor+use)
-    * [.connect()](#Vapor+connect)
+    * [.connect(codes)](#Vapor+connect)
     * [.disconnect()](#Vapor+disconnect)
 
 <a name="new_Vapor_new"></a>
@@ -84,10 +84,19 @@ This method is chainable.
 | data | <code>\*</code> | Extra data passed to VaporAPI. Use `object` for multiple values. |
 
 <a name="Vapor+connect"></a>
-### vapor.connect()
+### vapor.connect(codes)
 Connects Vapor to Steam network.
 
+You can provide optional authentication codes.
+
 **Kind**: instance method of <code>[Vapor](#Vapor)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| codes | <code>Object</code> | Optional object with authentication codes. |
+| codes.authCode | <code>string</code> | Auth code received by e-mail. |
+| codes.twoFactorCode | <code>string</code> | Auth code from mobile app. |
+
 <a name="Vapor+disconnect"></a>
 ### vapor.disconnect()
 Disconnects Vapor from Steam network.

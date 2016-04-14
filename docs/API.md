@@ -20,7 +20,7 @@
 
 * [API](#API)
     * [new API(vapor, pluginName, data)](#new_API_new)
-    * [.connect()](#API+connect)
+    * [.connect(codes)](#API+connect)
     * [.disconnect()](#API+disconnect)
     * [.getClient()](#API+getClient) ⇒ <code>SteamClient</code>
     * [.getHandler(handler)](#API+getHandler) ⇒ <code>Object</code>
@@ -49,10 +49,19 @@ Instance of this class is passed to plugins exported function as the only argume
 | data | <code>Object</code> | Data object that is passed to API instance. |
 
 <a name="API+connect"></a>
-### api.connect()
+### api.connect(codes)
 Connect to Steam network.
 
+You can provide optional authentication codes.
+
 **Kind**: instance method of <code>[API](#API)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| codes | <code>Object</code> | Optional object with authentication codes. |
+| codes.authCode | <code>string</code> | Auth code received by e-mail. |
+| codes.twoFactorCode | <code>string</code> | Auth code from mobile app. |
+
 <a name="API+disconnect"></a>
 ### api.disconnect()
 Disconnect from Steam network.
