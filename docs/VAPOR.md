@@ -1,4 +1,5 @@
 <a name="Vapor"></a>
+
 ## Vapor
 **Kind**: global class  
 **Properties**
@@ -16,6 +17,7 @@
     * [.disconnect()](#Vapor+disconnect)
 
 <a name="new_Vapor_new"></a>
+
 ### new Vapor()
 Main Vapor class.
 
@@ -27,6 +29,7 @@ var vapor = require('vapor');
 var bot = vapor();
 ```
 <a name="Vapor+init"></a>
+
 ### vapor.init(config)
 Initializes Vapor instance.
 
@@ -69,6 +72,7 @@ var config = {
 bot.init(config);
 ```
 <a name="Vapor+use"></a>
+
 ### vapor.use(plugin, data)
 Use Vapor plugin.
 
@@ -84,6 +88,7 @@ This method is chainable.
 | data | <code>\*</code> | Extra data passed to VaporAPI. Use `object` for multiple values. |
 
 <a name="Vapor+connect"></a>
+
 ### vapor.connect(codes)
 Connects Vapor to Steam network.
 
@@ -98,6 +103,7 @@ You can provide optional authentication codes.
 | codes.twoFactorCode | <code>string</code> | Auth code from mobile app. |
 
 <a name="Vapor+disconnect"></a>
+
 ### vapor.disconnect()
 Disconnects Vapor from Steam network.
 

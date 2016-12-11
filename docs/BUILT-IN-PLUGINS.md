@@ -74,6 +74,7 @@ to determine the enum value</li>
 </dl>
 
 <a name="module_account-flags"></a>
+
 ## account-flags
 Logs account flags to console after successfully logging in.
 
@@ -89,6 +90,7 @@ This plugin is mostly useful for debugging and development.
 bot.use(vapor.plugins.accountFlags);
 ```
 <a name="module_admins"></a>
+
 ## admins
 Provides whitelist-like functionality for recognizing admin accounts.
 
@@ -109,6 +111,7 @@ API.emitEvent('isAdmin', '7656123456789', function(result) {
 });
 ```
 <a name="module_auto-reconnect"></a>
+
 ## auto-reconnect
 Automatically reconnects to Steam network if:
 
@@ -131,6 +134,7 @@ bot.use(vapor.plugins.autoReconnect);
 bot.use(vapor.plugins.autoReconnect, 3000);
 ```
 <a name="module_auto-responder"></a>
+
 ## auto-responder
 Automatically responds to any chat message with a predefined response.
 
@@ -146,6 +150,7 @@ Response is required to load this plugin.
 bot.use(vapor.plugins.autoResponder, 'Response chat message.');
 ```
 <a name="module_console-logger"></a>
+
 ## console-logger
 Provides simple console logger for `message:*` events emitted by any emitter.
 
@@ -159,6 +164,7 @@ Provides simple console logger for `message:*` events emitted by any emitter.
 bot.use(vapor.plugins.consoleLogger);
 ```
 <a name="module_debugger"></a>
+
 ## debugger
 Logs all `debug` events emitted by any emitter to console.
 
@@ -172,6 +178,7 @@ Logs all `debug` events emitted by any emitter to console.
 bot.use(vapor.plugins.debugger);
 ```
 <a name="module_decline-friend-requests"></a>
+
 ## decline-friend-requests
 Automatically declines all friend requests except for admins.
 
@@ -187,6 +194,7 @@ Use this plugin if you don't want to deal with friends list.
 bot.use(vapor.plugins.declineFriendRequests);
 ```
 <a name="module_decline-group-invites"></a>
+
 ## decline-group-invites
 Automatically declines all group invites.
 
@@ -202,6 +210,7 @@ Use this plugin if you don't want to deal with Steam group invites.
 bot.use(vapor.plugins.declineGroupInvites);
 ```
 <a name="module_decline-trade-requests"></a>
+
 ## decline-trade-requests
 Automatically declines all trade requests.
 
@@ -219,6 +228,7 @@ Use this plugin if you don't want to deal with regular trading system.
 bot.use(vapor.plugins.declineTradeRequests);
 ```
 <a name="module_essentials"></a>
+
 ## essentials
 Automatically emits 'message:info' events for all major Steam events.
 
@@ -232,6 +242,7 @@ Automatically emits 'message:info' events for all major Steam events.
 bot.use(vapor.plugins.essentials);
 ```
 <a name="module_fs"></a>
+
 ## fs
 Provides very simple file system handler for the following events
 emitted either by Vapor or plugin:
@@ -252,6 +263,7 @@ bot.use(vapor.plugins.fs);
 bot.use(vapor.plugins.fs, 'myDataFolder');
 ```
 <a name="module_offline-messages"></a>
+
 ## offline-messages
 Automatically removes and emits 'message:info' events
 for all pending chat messages.
@@ -269,6 +281,7 @@ related to offline messages.
 bot.use(vapor.plugins.offlineMessages);
 ```
 <a name="module_presence"></a>
+
 ## presence
 Sets display name and online state after logging in.
 
@@ -300,6 +313,7 @@ bot.use(vapor.plugins.presence, {
 });
 ```
 <a name="module_stdin-steamguard"></a>
+
 ## stdin-steamguard
 Reads SteamGuard auth code from the standard input.
 

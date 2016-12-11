@@ -8,6 +8,7 @@
 </dl>
 
 <a name="API"></a>
+
 ## API
 **Kind**: global class  
 **Properties**
@@ -36,6 +37,7 @@
     * [.webLogOn()](#API+webLogOn)
 
 <a name="new_API_new"></a>
+
 ### new API(vapor, pluginName, data)
 API class constructor.
 
@@ -49,6 +51,7 @@ Instance of this class is passed to plugins exported function as the only argume
 | data | <code>Object</code> | Data object that is passed to API instance. |
 
 <a name="API+connect"></a>
+
 ### api.connect(codes)
 Connect to Steam network.
 
@@ -63,17 +66,20 @@ You can provide optional authentication codes.
 | codes.twoFactorCode | <code>string</code> | Auth code from mobile app. |
 
 <a name="API+disconnect"></a>
+
 ### api.disconnect()
 Disconnect from Steam network.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="API+getClient"></a>
+
 ### api.getClient() ⇒ <code>SteamClient</code>
 Returns active Steam client used by Vapor.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>SteamClient</code> - Active Steam client.  
 <a name="API+getHandler"></a>
+
 ### api.getHandler(handler) ⇒ <code>Object</code>
 Returns active Steam handler used by Vapor.
 
@@ -85,12 +91,14 @@ Returns active Steam handler used by Vapor.
 | handler | <code>string</code> | Can be either `steamUser`, `steamFriends`, `steamTrading` or `steamGroups`. |
 
 <a name="API+getUtils"></a>
+
 ### api.getUtils() ⇒ <code>[Utils](#Utils)</code>
 Returns instance of Utils class.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>[Utils](#Utils)</code> - Instantiated Utils class.  
 <a name="API+getSteam"></a>
+
 ### api.getSteam() ⇒ <code>Steam</code>
 Returns Steam object.
 
@@ -99,18 +107,21 @@ This is especially useful for all the ESomething enums.
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Steam</code> - Steam.  
 <a name="API+getConfig"></a>
+
 ### api.getConfig() ⇒ <code>Object</code>
 Returns Vapor config object.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Object</code> - Config object.  
 <a name="API+getPlugins"></a>
+
 ### api.getPlugins() ⇒ <code>Array.&lt;string&gt;</code>
 Returns array of names of loaded plugins.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 **Returns**: <code>Array.&lt;string&gt;</code> - Array of plugin names.  
 <a name="API+emitEvent"></a>
+
 ### api.emitEvent(event, ...args)
 Allows plugin to emit custom events via Vapor's event emitter.
 
@@ -130,6 +141,7 @@ Also see [registerHandler](#API+registerHandler).
 API.emitEvent('myCustomPluginEvent', someString, someObject);
 ```
 <a name="API+registerHandler"></a>
+
 ### api.registerHandler(options, callback)
 Allows plugin to register custom handler for any event.
 
@@ -184,6 +196,7 @@ API.registerHandler({
 });
 ```
 <a name="API+hasHandler"></a>
+
 ### api.hasHandler(options)
 Returns true if there is at least one handler for the given event, false otherwise.
 
@@ -207,6 +220,7 @@ if(API.hasHandler('readFile')) {
 }
 ```
 <a name="API+removeAllHandlers"></a>
+
 ### api.removeAllHandlers(options)
 Allows plugin to remove all handlers for a specific event.
 
@@ -220,6 +234,7 @@ Allows plugin to remove all handlers for a specific event.
 | options.event | <code>string</code> | Event name. |
 
 <a name="API+getLogger"></a>
+
 ### api.getLogger() ⇒ <code>Object</code>
 Returns wrapper for emitting 'message:*' events prefixed with plugin's name.
 
@@ -240,6 +255,7 @@ log.warn('...and this is a warning message.');
 log.debug('String %s works too!', 'formatting');
 ```
 <a name="API+webLogOn"></a>
+
 ### api.webLogOn()
 Calls Vapor's internal webLogOn method.
 
@@ -254,6 +270,7 @@ by Vapor after successfully logging in.
 
 **Kind**: instance method of <code>[API](#API)</code>  
 <a name="Utils"></a>
+
 ## Utils
 **Kind**: global class  
 
@@ -268,6 +285,7 @@ by Vapor after successfully logging in.
     * [.getTimestamp(unixTimestamp, format)](#Utils+getTimestamp) ⇒ <code>string</code>
 
 <a name="new_Utils_new"></a>
+
 ### new Utils(Vapor)
 Utils class constructor.
 Instance of this class is available via [getUtils](#API+getUtils).
@@ -278,6 +296,7 @@ Instance of this class is available via [getUtils](#API+getUtils).
 | Vapor | <code>Object</code> | Vapor instance. |
 
 <a name="Utils+isAdmin"></a>
+
 ### ~~utils.isAdmin(steamID) ⇒ <code>Boolean</code>~~
 ***Deprecated***
 
@@ -294,6 +313,7 @@ Use built-in plugin 'admins' instead.
 | steamID | <code>string</code> | User's Steam ID. |
 
 <a name="Utils+getUserDescription"></a>
+
 ### utils.getUserDescription(steamID, format) ⇒ <code>string</code>
 Returns easy-to-read user description.
 
@@ -311,6 +331,7 @@ Format allows placeholders:
 | format | <code>string</code> | Format string. |
 
 <a name="Utils+stringToEnum"></a>
+
 ### utils.stringToEnum(string, enumList) ⇒ <code>number</code>
 Returns first enum value that contains the given string.
 
@@ -329,6 +350,7 @@ var tradeState = utils.stringToEnum("trade", Steam.EPersonaState);
 steamFriends.setPersonaState(tradeState);
 ```
 <a name="Utils+enumToString"></a>
+
 ### utils.enumToString(value, enumList) ⇒ <code>string</code>
 Returns string description for the given enum value.
 
@@ -346,6 +368,7 @@ Returns string description for the given enum value.
 var stateDescription = utils.stringToEnum(5, Steam.EPersonaState);
 ```
 <a name="Utils+accountIDToSteamID"></a>
+
 ### utils.accountIDToSteamID(accountID) ⇒ <code>string</code>
 Converts account ID to 64 bit SteamID string.
 
@@ -357,6 +380,7 @@ Converts account ID to 64 bit SteamID string.
 | accountID | <code>number</code> | User's account ID. |
 
 <a name="Utils+steamIDToAccountID"></a>
+
 ### utils.steamIDToAccountID(steamID) ⇒ <code>number</code>
 Converts 64 bit SteamID string to account ID.
 
@@ -368,6 +392,7 @@ Converts 64 bit SteamID string to account ID.
 | steamID | <code>string</code> | 64 bit SteamID. |
 
 <a name="Utils+getTimestamp"></a>
+
 ### utils.getTimestamp(unixTimestamp, format) ⇒ <code>string</code>
 Converts unix timestamp into formatted timestamp.
 
